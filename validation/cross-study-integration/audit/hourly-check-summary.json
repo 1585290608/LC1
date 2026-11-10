@@ -1,0 +1,7 @@
+{
+  "checks": 1075,
+  "passed": 1075,
+  "failed": 0,
+  "failures": [],
+  "sourcing": "Archived PRIMARY/Scenarios/Annual hourly DISPATCH and Financial CASHFLOWS only (existing D4 integration). No fresh simulation solver run."
+}

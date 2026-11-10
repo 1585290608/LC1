@@ -1,0 +1,71 @@
+{
+  "years": 20,
+  "discount": 0.03,
+  "import_gbp_kwh": 0.24,
+  "export_gbp_kwh": 0.05,
+  "standing_gbp_day": 2.0,
+  "OM_fraction": 0.025,
+  "fuel_gbp_l": 1.35,
+  "equipment": {
+    "pv_kw": 50,
+    "wind_kw": 50,
+    "battery_kwh": 300,
+    "pcs_kw": 90,
+    "dg_kw": 100,
+    "ups_kw": 30,
+    "ups_minutes": 15,
+    "fuel_tank_l": 2000
+  },
+  "grid_factor_kgCO2e_kwh": 0.177,
+  "grid_factor_source": {
+    "file": "Reference/Research documents/DESNZ_GHG_2025_flat_format.xlsx",
+    "sha256": "8bfdb45b81ec4a88e3bdf4584637330f62e6bd09ce1940e654c5d7b7f736de94",
+    "worksheet_xml": "xl/worksheets/sheet2.xml",
+    "row": "3066",
+    "cell": "J3066",
+    "reporting_year": 2025,
+    "underlying_grid_data_year": 2023,
+    "scope": "Scope2 location-based generated electricity factor for purchased kWh; no export credit; T&D/WTT excluded"
+  },
+  "unit_costs": {
+    "pv": 1257.0,
+    "wind": 4000.0,
+    "battery_dc": 400.0,
+    "pcs": 250.0,
+    "diesel": 30000.0,
+    "ups": 20000.0,
+    "common_site": 60000.0,
+    "tank_fixed": 8000.0,
+    "tank_per_l": 3.0
+  },
+  "replacements": {
+    "BESS_DC": {
+      "year": 12,
+      "fraction": 0.7
+    },
+    "BESS_PCS": {
+      "year": 12,
+      "fraction": 0.7
+    },
+    "DG": {
+      "year": 15,
+      "fraction": 0.8
+    },
+    "UPS": {
+      "year": 12,
+      "fraction": 0.65
+    }
+  },
+  "status": "USER_SPECIFIED_AND_ILLUSTRATIVE_INHERITED_ASSUMPTIONS; not quotations or MOD tariffs",
+  "basis": "Real2026GBP, costs atyear-end, initial cash atyear0; repeated2025 physical year, no escalation/tax/subsidy/VOLL; no equipment residual, recover unchanged fuel stock atyear20",
+  "cost_scope": {
+    "BESS": "400GBP/kWh interpreted as DC battery/racks/BMS only; excludes standalone PCS. Explicit unverified boundary assumption, not proof of a packaged quote.",
+    "PCS": "250GBP/kW separate90kW BESS PCS; no additional inverter counted inside BESS cost",
+    "PV": "1257GBP/kWp PV assembly including PV inverter, excluding common site allowance; illustrative scope assumption",
+    "wind": "4000GBP/kW turbine/conversion assembly, excluding common site allowance; illustrative scope assumption",
+    "common_installation": "60000GBP same site/civils/switchgear allowance for P0R and hybrids; no duplicate separate civils/inverter rows",
+    "UPS": "Independent30kW/15min system, not300kWh BESS",
+    "capital": "CAPEX excludes initial diesel working inventory; year0 cash includes both. No equipment salvage atyear20 is a conservative financial assumption.",
+    "replacement": "Inherited year12 BESS70%/PCS70%/UPS65%; year15 DG80%. No within20year PV/wind replacement assumed; not OEM lifetime certification."
+  }
+}

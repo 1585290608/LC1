@@ -1,0 +1,48 @@
+{
+  "definition_id": "MDT2513_DG100_ARCHIVED",
+  "native_version": "1.4.2513.0",
+  "pymdt_version": "1.4.2520",
+  "rated_kw": 100.0,
+  "fractions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "stored_values": [
+    0.1095,
+    0.104,
+    0.082,
+    0.077,
+    0.074
+  ],
+  "units_per_point": [
+    "USgal/hour (idle input, manual special0%unit)",
+    "USgal/(kW hour)",
+    "USgal/(kW hour)",
+    "USgal/(kW hour)",
+    "USgal/(kW hour)"
+  ],
+  "valid_positive_power_domain_kw": [
+    25.0,
+    100.0
+  ],
+  "interpolation": "Linear interpolation of specific fuel consumption between25%,50%,75%,100%, then multiply actualONkW and actualONhours. Verified against archived nativeD0DG-only output in38–65kW domain.",
+  "zero_and_below25": "OFF produces0 fuel under model assumption. Idle point is recorded separately with its own units, not used as gal/kWh anchor. Idle/running0 and positive<25kW behaviour not validated by this model; reject positive<25kW.",
+  "zero_point_documentation": "Official2024Guide PDFpages28–29:0%entry excludes energy output denominator; page85 discusses integration/interpolation. This restriction corrects the overbroad all-five-specific shorthand in Draft2; matched38–65kW control unaffected.",
+  "USgal_to_L": 3.785411784,
+  "startup_fuel": "No extra startup consumption in these numerical models; physical startup/idle fuel unverified",
+  "minimum_load": "Research25%fixed; not claimed native/OEMminimum",
+  "fixed_reference_L_per_kWh": 0.25,
+  "native_readback": "Baseline_Draft2/native_reference/V16/evidence/v15_native/A_H24_20261104T204639009459Z/FRESH_MOF_READBACK.json",
+  "readback_sha256": "9975ffae4d9e8c1fcf9eeea78bddd0ec283223097327984c4bdbe136ee446906",
+  "native_input": "Baseline_Draft2/native_reference/V16/evidence/v15_native/A_H24_20261104T204639009459Z/input.mbf",
+  "native_input_sha256": "25c364e17973629013b71c4f0939a92bbb1c1a60b4d70888629d7d1ad8769bbc",
+  "native_output": "Baseline_Draft2/native_reference/V16/evidence/v15_native/A_H24_20261104T204639009459Z/results.mof",
+  "native_output_sha256": "fb4a766df20c12b056b79e66d47a31a48a7a5a597fa31e6eddce54a34d2ea994",
+  "official_manual": "Reference/Research documents/Sandia_2024_MDT_User_Guide_v1_4.pdf",
+  "official_manual_sha256": "2d5fbdc67cee8c2f69c17d8652947dee7db3ac6c98e1f11090ea7aff5e808cf7",
+  "idle_native_execution": "NOT_RUN_NEW",
+  "OEM_curve_validation": "UNVERIFIED"
+}

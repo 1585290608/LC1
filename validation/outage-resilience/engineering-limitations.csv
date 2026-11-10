@@ -1,0 +1,15 @@
+﻿id,limitation,status
+SCENARIO_NOT_COMBAT,"Allcases deterministic, synthetic demand/publicNASA source; neither militarycombatvalidation nor probability/reliability estimates.",MODEL_LIMITATION_OR_NOT_VERIFIED
+FOUR_WEEKS_ONLY,"Fourdistinct168h2025windows are not seasonalclimatology, confidenceintervals or multiyearrisk.",MODEL_LIMITATION_OR_NOT_VERIFIED
+NATIVE_PARITY,Only archived scopedDGfuel/control provenance is gated; wholeHybridMDTparity notverified; no newnativeMDT/HOMERrun.,MODEL_LIMITATION_OR_NOT_VERIFIED
+FUEL_MODEL,"CatalogueSFCpositive25-100kW, not selectedOEMcurve; startup/idlefuel, tankdeadvolume/leakage/refuelling unknown/notmodelled.",MODEL_LIMITATION_OR_NOT_VERIFIED
+STARTUP_UPS,"OnehourcoldDGstartup is inheritedresearchassumption; idealUPS30kW/7.5kWhAC energybudget, not measuredswitching/ride-through.",MODEL_LIMITATION_OR_NOT_VERIFIED
+HOURLY_BATTERY,Hourlybatteryenergy allocation; piecewiseDG/UPSbookkeeping does notcertify realintrahourtransients or exactoutageonset.,MODEL_LIMITATION_OR_NOT_VERIFIED
+GFM_AC_REFERENCE,InheritedACreference remainsassumed evenDGoffline/fuelempty; REacceptance is not proof that an actual bus staysenergised or canblackstart.,MODEL_LIMITATION_OR_NOT_VERIFIED
+PROTECTION,"Busvoltage/frequency, faults, protectioncoordination, kVA/Q, cable/transformer/PCS/GFM ratings and OEMperformance unverified.",MODEL_LIMITATION_OR_NOT_VERIFIED
+FUEL_GUARD_EXTENSION,Newdocumented preemptiveDGchargeinhibit atpartialfuelexhaustion preservesoldhourly single-directionbatteryconstraint; originalDraft3Aunchanged.,MODEL_LIMITATION_OR_NOT_VERIFIED
+SOC_COST_LINK,Draft3CinitialSOC30/50/70 scenarios do not sampleactualDraft3BoutagestartSOCdistribution; thresholds inislandedS3stay30/60.,MODEL_LIMITATION_OR_NOT_VERIFIED
+NOMINAL_EFFECTIVE_POWER,"C4nominalPV/Wind50/50; effectivecomputationalcoefficients30/30 encode0.6availability, not new30kW equipment or changedCAPEX.",MODEL_LIMITATION_OR_NOT_VERIFIED
+P0R_INACTIVE_BATTERY,"PCS0internalBatteryobject is quiescent scaffolding; no actualBESS credited, SOCmarkednotapplicable.",MODEL_LIMITATION_OR_NOT_VERIFIED
+FUEL_MINIMUM,Hybrid1000Lwintercase ends3.031L; no operationalreserve margin or safeinventory recommendation established.,MODEL_LIMITATION_OR_NOT_VERIFIED
+EMISSIONS_BOUNDARY,CarbonSupplement is normalyear purchasedelectricityScope2only; wartimedieselScope1/lifecycleemissions remain separate.,MODEL_LIMITATION_OR_NOT_VERIFIED

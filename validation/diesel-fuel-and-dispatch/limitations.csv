@@ -1,0 +1,12 @@
+﻿priority,id,status,issue,next_evidence_required
+P1,OEM_FUEL,NOT_VERIFIED,MDT catalogue points are not a selected real manufacturer engine curve; real idle/startup fuel unverified.,Obtain prime-rated 50Hz generator datasheet and measured fuel curve before equipment claims.
+P1,NATIVE_LOW_OUTPUT,MODEL_LIMITATION,Manual zero point has different units; positive <25kW and running-idle behaviour not validated here.,Prospective native low-power/idle controls and version-specific API definitions; do not interpolate mixed-unit anchors.
+P1,NATIVE_HYBRID,PARTIALLY_COMPARABLE,Saved native EMS/PCS120/initial conditions differ from this PCS90 Draft2 branch; no native S1-S3 runs.,Gated prospective matched hybrid controls before any hybrid parity claim.
+P1,ELECTRICAL,NOT_VERIFIED,"AC connection, dump25kW, PCS limits/efficiencies, grid-forming, UPS and instantaneous priority remain research assumptions.","Actual SLD, OEM limits, protection/transient and commissioning evidence needed."
+P2,CONTROL_THRESHOLDS,ILLUSTRATIVE_SCENARIO,S2/S3 SOC0.30/0.60 thresholds registered before outcomes; no minimum runtime/ramp/startup fuel.,Validate against a specified controller; this study does not optimise thresholds.
+P2,TERMINAL_STATE,NOT_EQUIVALENT,Matched initial SOC but different terminal SOC and lower-tier service; finite-window ranking only.,For later economics require cyclic or declared terminal-energy treatment and equivalent service.
+P2,TIME,PARTIALLY_VERIFIED,2025 source LST indices confirmed; absolute UTC not directly exported/verified; timestep1h with fractional energy profiles.,Do not claim 10-second transients or annual statistical resilience.
+P2,MIN_LOAD_50,INFEASIBLE_UNCHANGED_SINK,Synthetic15kW request with min50kW leaves35kW surplus exceeding25kW sink.,Retain failure; any larger sink needs independently justified new hardware scenario.
+P2,LOW_MIN_NATIVE,UNSUPPORTED_DOMAIN,Synthetic15kW output with native model at min0/10% lies outside supported positive domain.,"Retain failed diagnostics, no invented fuel outputs."
+P3,ATTEMPT_001,QUARANTINED_PIPELINE_ERROR,First attempt raised duplicate status keyword while assembling metadata after valid trace; never admitted or plotted.,"Corrected orchestration, preserved folder/log, fresh successful run and independent replay."
+P3,FIGURE_INITIAL,SUPERSEDED_VISUAL_EXPORT,First curve/scatter PDF top margins clipped; initial graphics preserved in versions/initial_export.,"Corrected layout, re-rendered all10 final PDFs and visually reviewed."

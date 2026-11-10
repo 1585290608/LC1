@@ -1,0 +1,11 @@
+﻿metric,before,after,units,before_basis
+DG generated,3034.655142229904,2934.655142229904,kWh,instrumented original dispatch
+DG delivered,2696.7312781987275,2668.491893701794,kWh,original saved delivery
+DG dumped,,266.1632485281098,kWh,not logged originally; required missing surplus337.923864kWh
+Fuel consumed,758.6637855574763,733.663785557476,L,actual tank decline
+SOC initial,0.7,0.7,fraction,actual initialisation; old report used.717130
+SOC final,0.3,0.3,fraction,Read original end-state separately
+Grid import,162532.97892069284,162539.60887727374,kWh,original YEAR_SUMMARY
+Grid export,2154.625998961989,2154.625998961989,kWh,original YEAR_SUMMARY
+C4 ENS,0.0,0.0,kWh,original yearly served/required
+Full AC max residual,24.052662307155927,1.4210854715202004e-14,kWh,"independent physical residual, not legacy self-check"

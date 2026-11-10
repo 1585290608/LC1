@@ -1,0 +1,23 @@
+# Local runtime and generated work
+.venv*/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+/models/*/Results/
+/models/*/Logs/
+# Unpublished, vendor and site-specific material
+/local-only/
+*.zip
+*.whl
+*.mbf
+*.mof
+*.dll
+*.exe
+*.pptx
+*.tex
+*.pdf
+*.sqlite*
+*.db
+*.env
+*.pem
+*.key

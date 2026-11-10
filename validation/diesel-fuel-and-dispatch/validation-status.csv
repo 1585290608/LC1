@@ -1,0 +1,14 @@
+﻿phase,status,evidence_summary
+A1,PASS_NUMERICAL,Fixed0.25 model preserved; actual generated ONpower*duration
+A2,PASS_SCOPED_WITH_LIMITS,"Native catalogue readback/hashes, mixed-unit0% caveat, 25-100kW Python domain"
+A3,PASS_NUMERICAL,Frozen trajectories first; closed-loop studies separate
+B,PASS_NUMERICAL,Four preregistered dispatch modes; physical assumptions remain unverified
+C,PASS_NUMERICAL,24 matched independently initialised deterministic nested-window cases
+D,PASS_NUMERICAL,DG/BESS/tier/system metrics; source-tagged battery accounting
+E,PASS_NUMERICAL,33 tests; 31 independent saved-case checks;24 byte-identical replays plus full fresh research rebuild
+F,PASS_VISUAL_REVIEW,10 figures; SVG/vectorPDF/600dpiPNG plus figure CSV/hash register
+G,PASS_REPRODUCIBLE,"Data/curve/source hashes, raw traces, configs, offline wheels, commands"
+H,COMPLETE_SCOPED_REPORT,RQ1-RQ6; no economics/global optimum/equipment claims
+NATIVE_DG,PARITY_VERIFIED_SCOPED,Gated saved genuine24h DG-only control; no new native solver run
+NATIVE_HYBRID,PARTIALLY_COMPARABLE,No hybrid parity promotion
+EQUIPMENT,NOT_VERIFIED,"No hardware, protection or real fuel/OEM certification"

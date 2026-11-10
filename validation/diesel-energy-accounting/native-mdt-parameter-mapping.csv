@@ -1,0 +1,18 @@
+﻿parameter,Python,MDT,match,limitation
+Weather start,Reference0 (2025Jan1 sourceLST),NativeA/C index24 (2025Jan2 sourceLST inferred),NO reference;YES controlledDG24,Clock/source window difference; absoluteUTC notexported
+Array indexing,0-based arrays;CSV1-based validated,CSV1-based;runtimeindex24 establishedprospectively,Mapped,No one-hour shift inferred merely from file names
+PV capacity,50kW reference,"C1=50,C2=75;A=disabled",C1nominalonly,Generation disabled for controlledDG24
+Wind capacity,50kW reference,"C1=50,C2=75;A=disabled",C1nominalonly,"Hypothetical capacity scale, not OEM rating"
+DG rating,100kW,100kW,YES,Not actual50Hz prime/continuous certification
+DG minimum,25% =25kW whenON,Abstract minimum not supported by selectedMDTparameter; below25% observed inV15,UNVERIFIED;inactive38–65kW control,No claim matching below-minimum dispatch
+DG fuel,Generic.25L/kWh,Specific USgal/kWh5pointcatalogue,NO reference;YES isolatedcataloguecontrol,No reference coefficients fitted or rewritten
+Startup,Reference3600s,NativeA10s; BESSbus25s including15ssync,NO reference;YES DG24control,"Energy profiles only, not transient physics"
+Battery capacity,300kWh,"300kWh inB/C,disabledinA",NominalYES only,ControlledDG24PCS0storageflowsoff
+Initial SOC,Reference.7 directprestep,"Hybriddesired.7,actualinitialindirect",PARTIAL,Do not convert reconstructed nativeendpoint intoobservation
+Minimum SOC,.1,.1,NominalYES,Sameboundsnot samecontroller
+PCS,90kW originalrepair,120kW hybrid,NO,Different from75/75PCS120researchcandidate;nochangeofbaselinehidden
+Load,VerifiedD0C4/Aux/EV,"SameD0profiles,24hphasealignmentrechecked",YES controlledindex24,NoMODtelemetry
+Load priority,StrictC4→Aux→EV energy allocation,TestedBatteryUser/Standardstressproportional,NO hybridshortage,No fullhybridparity
+Dispatch,RE thenbattery thenon-demandDG;stopon0request,"NativeStandard,min1,chargesnearSOCmax",NO,EMS/controlstrategy distinct
+Duration,24/72/168 same-startreinitialisedandreferenceprefixes,24/72/168 nestedsourcewindow,Withinwindowdefined,No independentMonteCarlo samples
+Initial fuel,Reference2000L finite,Native3000L finite,NO reference;YES DG24control,Perstep/eventinventoryverified

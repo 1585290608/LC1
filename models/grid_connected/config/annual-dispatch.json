@@ -1,0 +1,17 @@
+{
+  "status": "REGISTERED_BEFORE_NEW_ANNUAL_RUNS",
+  "time": {"hours": 8760, "year": 2025, "time_standard": "source LST, not UK settlement/BST clock", "dt_h": 1},
+  "hardware": {"pv_kw":50,"wind_kw":50,"battery_kwh":300,"pcs_kw":90,"dg_kw":100,"ups_kw":30,"ups_minutes":15,"fuel_tank_l":2000},
+  "battery": {"initial_soc":0.7,"terminal_soc":0.7,"soc_min":0.1,"soc_max":0.9,"eta_charge":0.8944,"eta_discharge":0.8944},
+  "grid": {"import_limit_kw":100,"import_limit_status":"HYPOTHETICAL inherited from original LC1 peacetime scenarios, not an approved connection", "export_limits_kw":[0,20],"export_permission":"ASSUMED_CONDITIONAL_NOT_APPROVED","grid_to_bess":"Only final48h terminal restoration; no price arbitrage","battery_export":false,"diesel_routine_operation":false},
+  "terminal_policy": {"last_hours":48,"policy":"Same fixed terminal-management window for every hybrid: charging ceiling and discharge floor become70%; grid top-up within residual100kW connection headroom and90kW PCS, paid at scenario import price. Renewable charge has priority. No SOC resets; nonattainment quarantined.","selection":"Declared before results, no search/tuning for financial benefit"},
+  "reserve_soc":[0.3,0.5,0.7],
+  "wind_scale":[0.6,0.8,1.0],
+  "import_prices_gbp_per_kwh":[0.168,0.24,0.312],
+  "export_price_gbp_per_kwh":0.05,
+  "financial": {"horizon_years":20,"real_discount_rate":0.03,"base_import_gbp_per_kwh":0.24,"standing_gbp_per_day":2,"days_per_year":365,"annual_OM_fraction_capex":0.025,"fuel_gbp_per_l":1.35,"currency":"GBP real2026 scenario; no inflation, taxes, subsidy or escalation","asset_residual_value_year20":0,"fuel_stock_recovered_year20":true},
+  "cost_boundary": {"BESS":"400GBP/kWh interpreted as DC battery/racks/BMS only; excludes standalone PCS. Explicit unverified boundary assumption, not proof of a packaged quote.","PCS":"250GBP/kW separate90kW BESS PCS; no additional inverter counted inside BESS cost","PV":"1257GBP/kWp PV assembly including PV inverter, excluding common site allowance; illustrative scope assumption","wind":"4000GBP/kW turbine/conversion assembly, excluding common site allowance; illustrative scope assumption","common_installation":"60000GBP same site/civils/switchgear allowance for P0R and hybrids; no duplicate separate civils/inverter rows","UPS":"Independent30kW/15min system, not300kWh BESS","capital":"CAPEX excludes initial diesel working inventory; year0 cash includes both. No equipment salvage atyear20 is a conservative financial assumption.","replacement":"Inherited year12 BESS70%/PCS70%/UPS65%; year15 DG80%. No within20year PV/wind replacement assumed; not OEM lifetime certification."},
+  "study_design":"12 physical annual cases: P0,P0R,six reserve/export hybrids,four reduced-wind cases. Price sensitivities reuse physically identical hourly runs. OFAT, not a full factorial.",
+  "P2":"NOT_IMPLEMENTED; P3 is an extension of P1 self-consumption, not price-aware optimisation",
+  "scope_limitations":["No outages or reliability value monetisation","No real export approval or MOD tariff","No equipment warranties/quotes, aging or standby parasitics","2025 weather repeats in financial years; no grid-decarbonisation forecast","Carbon operational boundary fixed separately from life-cycle factors"]
+}
