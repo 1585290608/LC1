@@ -45,8 +45,10 @@ to the original model versions and archived results.
   and site equipment evidence.
 
 The latest native runs and their private catalogues are retained in the local
-research archive. The public [validation index](validation/) links the
-reports and replay material available in this repository.
+research archive. The [native validation evidence](validation/native-mdt/)
+contains the public result tables, input and output hashes and a verification
+command. The [EN3400 results and discussion](docs/en3400-results-and-discussion.md)
+connects those tables to the study conclusions.
 
 ## Quick start
 
