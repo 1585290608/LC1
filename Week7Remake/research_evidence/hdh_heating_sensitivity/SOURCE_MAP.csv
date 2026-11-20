@@ -1,0 +1,19 @@
+role,evidence_class,input_file_or_reference,source_url,purpose_and_provenance,sha256
+frozen,MODELLED_BASELINE,week7/outputs/low_load_8760.csv,,"Archive checksum and Low comparison, no redispatch",3fe4d13077e621f674af997ea9392626a97c4daba7b997e3f3d0f0b633481e89
+frozen,MODELLED_BASELINE,week7/outputs/central_load_8760.csv,,Original Central AC category series and annual heating target,5bd278b48e9ec0607273255fe7763c7364d896c6a31ce68eb9806d90c3084660
+frozen,MODELLED_BASELINE,week7/outputs/high_load_8760.csv,,"Archive checksum and High comparison, no redispatch",e61c49bf8ac1037a090ec2b4f32fd1c9c64b1d1ca1cc01e3168f2d050f9d063f
+frozen,MODELLED_BASELINE,week7/config/equipment.csv,,30 kW electric heating rating and all 14 category ratings,56766bb41324d1de9bad00d36b7c7e8ed443f40189af464e3a0bf2a787b1fa8a
+frozen,MODELLED_BASELINE,week7/load_model.py,,Fixed LST heating and non-heating masks and scenario factors,9b7d0c365869f9b1957f641459f7facac0b26076b9ccd6adbf753e93c652f35f
+frozen,MODELLED_BASELINE,week7/config/fleet.csv,,Seven identical vehicle archetypes and mission inputs,5269fdf2552424a9625193911293b785186e5eb1767319d7b9a8289f699c952b
+weather,NASA_POWER_METEOROLOGICAL_INPUT,data/nasa-power-sennybridge-2025.csv,https://power.larc.nasa.gov/docs/services/api/temporal/hourly/,Archive NASA POWER / MERRA-2 2 m T2M 2025 at 51.95N 3.57W. Public NASA weather product.,2a59fbfd46bdb9b2cb24b67436dacd43ec8e42108ce4269e8506f8158b52e120
+weather,NASA_POWER_METEOROLOGICAL_INPUT,data/temp.csv,,Processed T2M extracted from the raw file; exact same values and timestamps,583d17be2e65d7f5012d70aa722386e19f540dfa3b2aabdc4a13d6113514f48c
+resource,MODELLED_BASELINE,data/v6_solar_pu_index_value.csv,,Frozen PV resource used in all A and B runs,75c740785c5257bbd2805634f2754915c3576db93eecac619f1a2dfa9646cd34
+resource,MODELLED_BASELINE,data/v6_wind_pu_index_value.csv,,Frozen Wind resource used in all A and B runs,7acce0b08c4c5e9846010228fdd105f67f1438d555b79d5a1cbf9aeae089c853
+solver,MODELLED_BASELINE,models/core/simulate.py,,"Frozen 100 kW DG, electrical limits and storage settings",75979704cf10b76ceb99205d5964cf381723d09e914eb59b63fcedc3cb616bc6
+solver,MODELLED_BASELINE,models/islanded/config/fuel-models.json,,Preserved MDT_DERIVED fuel definition used by Python,ac75418fa271b92d7ccd471bb0ce3e8b8c1ec515c2b76e3be688e96959b08c9f
+solver,MODELLED_BASELINE,week7/nextstage/screen.py,,Unchanged runner code; separate namespace input adapter,0a07ff2946fbff6dae52e40b53d3609b18c8885dc8d4bec17955cbf3a9044731
+solver,MODELLED_BASELINE,week7/nextstage/dispatcher.py,,Unchanged S3-v2 dispatcher,ad3aca7fed233d96109e06fcda39c0ea7dbb71efffac9f75ae99c0527b797b17
+solver,MODELLED_BASELINE,week7/nextstage/fleet_feedback.py,,Unchanged dynamic EV workflow used for both outage cases,f84ef42d4ef759079133b2befc7022b153d4ca1cc28810f0caa3c83b4c0b8ff1
+parity,MODELLED_BASELINE,week7/nextstage/outputs/mission_readiness_feedback_matrix.csv,,"Saved winter starts/hardware and original 24, 72 and 168 h regression targets",d61cdb0e3fec006758dad604cfed9a6c26557c9502648472e42a02265eeb15c7
+context,MEASURED_EXTERNAL_REFERENCE,research_evidence/temperature_driven_load_calibration/external_data_screen.csv,https://heatpumpmonitor.org/about,"Domestic ASHP evidence screened previously. No coefficient, meter trace or daily electrical energy from these systems enters this study.",e0d8b6626ff965bc7c7bac1a42698b603dc33158e25de1be835142426cb313d0
+convention,TEMPERATURE_INFORMED_SYNTHETIC,Private reference: Met_Office_Construction_Catalogue_v3.pdf,https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/business/sectors/construction-catalogue-v3.pdf,Met Office catalogue v3 p.15 UK 15.5 C degree-day reporting convention only. Public document; private archive copy. Publication date unverified; accessed 2026-11-20.,e5c0c5cf8498acac2d864b7cc0f7f407be9f00cd18a1f647f77b795c588e403e
