@@ -12,9 +12,9 @@ The increased energy and peak demand change the required grid import headroom, r
 
 ## EV assumptions
 
-The original fleet representation was 20 kW for four hours per day, 80 kWh/day. The revised fleet uses seven generic archetypes, with per-vehicle SOC and mission energy. The model assumes 92% AC-to-DC charging efficiency, a shared 70 kW AC cap, and 90% initial SOC. Vehicles charge only during modelled connection windows. A reserve gate checks that a vehicle can complete its scheduled mission before departure.
+The original fleet representation was 20 kW for four hours per day, 80 kWh/day. The revised fleet uses seven generic archetypes, with per-vehicle SOC and mission energy. The 75, 160 and 100 kWh battery capacities are **provisional simulation assumptions** for the light utility, medium logistics and mobile emergency support archetypes respectively. The values have no supporting OEM specifications or measured fleet data. The model assumes 92% AC-to-DC charging efficiency, a shared 70 kW AC cap, and 90% initial SOC. Vehicles charge only during modelled connection windows. A reserve gate checks that a vehicle can complete its scheduled mission before departure.
 
-| Vehicle group | Count | Battery per vehicle | AC connection | Nominal scheduled travel | Minimum SOC |
+| Vehicle group | Count | Provisional battery capacity per vehicle | AC connection | Nominal scheduled travel | Minimum SOC |
 | --- | ---: | ---: | ---: | --- | ---: |
 | Light utility | 4 | 75 kWh | 11 kW | 50–65 km per mission, illustrative weekdays | 20% |
 | Medium logistics | 2 | 160 kWh | 22 kW | 90–95 km per mission, illustrative weekday schedules | 25% |

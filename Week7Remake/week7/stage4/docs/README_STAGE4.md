@@ -13,7 +13,7 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python -m pytest -q tests week7/tests wee
 python week7/audit/check_preservation.py
 ```
 
-`run_study` reproduces 1,508 deterministic static-load scenarios, 52 dynamic EV runs, 780 archived Stage3 numerical metric comparisons and a SHA-256 output manifest. It does not use external native software. For a new clean output folder, use `--out /tmp/my-stage4-results` (therefore existing results are not overwritten).
+`run_study` reproduces 1,508 deterministic static-load scenarios, 52 dynamic EV runs, 780 archived Stage3 numerical metric comparisons and a SHA-256 output manifest. It does not use external native software. For a new clean output folder, use `--out stage4-review-results` (therefore existing results are not overwritten).
 
 ### Core outputs
 
