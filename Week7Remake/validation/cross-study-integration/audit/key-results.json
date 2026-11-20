@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-06",
+  "source_packages": [
+    {
+      "stage": "3A",
+      "archive": "LC1_Draft3A_Research_Package.zip",
+      "sha256": "881b2caff6309434e29caf0a2335c71eeffab5a88e5cbb93988ca64fdc0f8cd4",
+      "zip_files": 1837,
+      "zip_integrity": "PASS"
+    }
+  ],
+  "counts": {
+    "draft3a_dispatch": 24,
+    "draft3b_annual": 12,
+    "draft3b_economic": 16,
+    "draft3c_scenarios": 18,
+    "independent_aggregate_checks": 328,
+    "checks_pass": 328
+  },
+  "dispatch_168_fixed": {
+    "S0": 733.6637855574763,
+    "S1": 692.7825951104937,
+    "S2": 759.2111381375632,
+    "S3": 694.5276789918071
+  },
+  "economic": {
+    "P0R_npc": 1645514.974103867,
+    "P1_npc": 1421946.6075020393,
+    "saving": 223568.3666018278,
+    "sustained_discounted_payback": 12.241198952667355
+  },
+  "resilience": {
+    "C1_Winter_P0R": {
+      "critical_ea": 79.82884221234703,
+      "critical_ens_kwh": 1016.6263524977104,
+      "fuel_l": 2000.0
+    },
+    "C1_Winter_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 996.9689051693392
+    },
+    "C1_Spring_P0R": {
+      "critical_ea": 79.82884221234703,
+      "critical_ens_kwh": 1016.6263524977104,
+      "fuel_l": 2000.0
+    },
+    "C1_Spring_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 319.1384417389529
+    },
+    "C1_Summer_P0R": {
+      "critical_ea": 79.82884221234703,
+      "critical_ens_kwh": 1016.6263524977104,
+      "fuel_l": 2000.0
+    },
+    "C1_Summer_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 868.7679241310866
+    },
+    "C1_Autumn_P0R": {
+      "critical_ea": 79.82884221234703,
+      "critical_ens_kwh": 1016.6263524977104,
+      "fuel_l": 2000.0
+    },
+    "C1_Autumn_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 799.8104242076454
+    },
+    "C2_F500_P0R": {
+      "critical_ea": 20.40161825443891,
+      "critical_ens_kwh": 4011.7584399762786,
+      "fuel_l": 500.0
+    },
+    "C2_F500_HYBRID": {
+      "critical_ea": 87.93511007924639,
+      "critical_ens_kwh": 608.0704520059818,
+      "fuel_l": 500.0
+    },
+    "C2_F1000_P0R": {
+      "critical_ea": 39.955793846866534,
+      "critical_ens_kwh": 3026.2279901179268,
+      "fuel_l": 1000.0
+    },
+    "C2_F1000_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 996.9689051693404
+    },
+    "C3_SOC30_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 1042.6951644400165
+    },
+    "C3_SOC50_HYBRID": {
+      "critical_ea": 100.0,
+      "critical_ens_kwh": 0.0,
+      "fuel_l": 1021.1413027931086
+    },
+    "C4_CONTROL_P0R": {
+      "critical_ea": 39.91442110617351,
+      "critical_ens_kwh": 6056.62635249771,
+      "fuel_l": 2000.0
+    },
+    "C4_STRESS_P0R": {
+      "critical_ea": 39.88604319122152,
+      "critical_ens_kwh": 6059.486846324871,
+      "fuel_l": 2000.0
+    },
+    "C4_CONTROL_HYBRID": {
+      "critical_ea": 92.2562654688269,
+      "critical_ens_kwh": 780.5684407422484,
+      "fuel_l": 2000.0
+    },
+    "C4_STRESS_HYBRID": {
+      "critical_ea": 72.52694905547337,
+      "critical_ens_kwh": 2769.2835352082852,
+      "fuel_l": 2000.0
+    }
+  },
+  "scope2_tonnes": {
+    "P0R": 52.7716416,
+    "P1_E20_R30": 21.65649654055798
+  },
+  "restrictions": [
+    "Aggregate CSV identities checked independently; hourly raw-trace replay and source-code execution are documented in the original packages, not rerun in this D4 build.",
+    "No field validation, site-specific measured demand, OEM fuel curve or full hybrid MDT parity.",
+    "3A fixed and MDT-derived fuel outcomes are separate models; 3B grid economy does not measure outage EA.",
+    "3C control and stress have different terminal SOC/inventory; comparisons remain deterministic."
+  ]
+}

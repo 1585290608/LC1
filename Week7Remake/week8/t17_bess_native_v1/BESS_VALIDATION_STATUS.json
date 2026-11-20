@@ -1,0 +1,92 @@
+{
+  "benchmarks": {
+    "B1": {
+      "A": "PASS",
+      "B": "INCONCLUSIVE",
+      "C": "PASS",
+      "native_charge_ac_kwh": 0.0,
+      "native_discharge_ac_kwh": 90.0,
+      "native_critical_ens_kwh": 0.0,
+      "native_delivered_solar_kwh": 0.0,
+      "native_spill_kwh": 0.0,
+      "native_initial_soc_left_sample": 0.7,
+      "terminal_soc_derived": 0.3645796064400715,
+      "terminal_soc_direct": "INCONCLUSIVE",
+      "dc_gain_kwh_derived": 0.0,
+      "dc_removed_kwh_derived": 100.62611806797854,
+      "native_idle_and_active_durations_h": [
+        "1"
+      ],
+      "observed_reserve_boundary_h": null,
+      "AC_residual_kwh": 0.0,
+      "elapsed_s": 12.15600000001723,
+      "raw_mof_sha256": "9d9e63bfe341452716b8eb70362781800ac81a1f25070e942896123fa97b2004",
+      "derived_hourly_count": 1
+    },
+    "B2": {
+      "A": "PASS",
+      "B": "INCONCLUSIVE",
+      "C": "PASS",
+      "native_charge_ac_kwh": 90.0,
+      "native_discharge_ac_kwh": 0.0,
+      "native_critical_ens_kwh": 0.0,
+      "native_delivered_solar_kwh": 99.999999996,
+      "native_spill_kwh": 20.000000004,
+      "native_initial_soc_left_sample": 0.5,
+      "terminal_soc_derived": 0.76832,
+      "terminal_soc_direct": "INCONCLUSIVE",
+      "dc_gain_kwh_derived": 80.496,
+      "dc_removed_kwh_derived": 0.0,
+      "native_idle_and_active_durations_h": [
+        "1"
+      ],
+      "observed_reserve_boundary_h": null,
+      "AC_residual_kwh": -4.000000330961484e-09,
+      "elapsed_s": 10.34399999998277,
+      "raw_mof_sha256": "d9de8702d9e62fc541ebcef7b6d62c1654cdf4b7fd6079edcd2a0ce39a142957",
+      "derived_hourly_count": 1
+    },
+    "B3": {
+      "A": "PASS",
+      "B": "PASS",
+      "C": "FAIL",
+      "native_charge_ac_kwh": 0.0,
+      "native_discharge_ac_kwh": 107.328,
+      "native_critical_ens_kwh": 612.672,
+      "native_delivered_solar_kwh": 0.0,
+      "native_spill_kwh": 0.0,
+      "native_initial_soc_left_sample": 0.7,
+      "terminal_soc_derived": 0.29999999999999993,
+      "terminal_soc_direct": "INCONCLUSIVE",
+      "dc_gain_kwh_derived": 0.0,
+      "dc_removed_kwh_derived": 120.0,
+      "native_idle_and_active_durations_h": [
+        "3.5776",
+        "20.4224"
+      ],
+      "observed_reserve_boundary_h": 3.5776,
+      "AC_residual_kwh": 0.0,
+      "elapsed_s": 8.875,
+      "raw_mof_sha256": "75a7b1b6cda8637ed32d3fb6de450cb5f0a0888d352257902376b321742ae446",
+      "derived_hourly_count": 24
+    }
+  },
+  "DG_only_record": {
+    "DG_1h_aggregate_and_temporal": "PASS",
+    "DG_24h_aggregate_energy_and_fuel": "PASS",
+    "DG_24h_event_timing": "PASS",
+    "DG_24h_derived_hourly": "PASS",
+    "DG_native_fixed_1h_steps_24h": "STRICT FAIL",
+    "DG_native_tank_inventory_telemetry": "INCONCLUSIVE",
+    "complete_internal_PRM_integration_grid": "UNKNOWN"
+  },
+  "preservation": {
+    "archive_stage8_native": 68,
+    "archive_stage8_temporal": 29,
+    "v6_models": 9,
+    "baseline": 166,
+    "stage7_outputs": 16,
+    "archive_package": 367,
+    "stage7_regression_passed": 143
+  }
+}

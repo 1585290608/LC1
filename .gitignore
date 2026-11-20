@@ -1,16 +1,22 @@
-# Local runtime and generated work
+# Local Python runtime and caches
 .venv*/
 __pycache__/
 .pytest_cache/
 *.py[cod]
-/models/*/Results/
-/models/*/Logs/
-# Unpublished, vendor and site-specific material
 /local-only/
+/Week7Remake/local_run_logs/
+**/models/*/Results/
+**/models/*/Logs/
+
+# Private research and vendor artifacts
 *.zip
+*.7z
 *.whl
 *.mbf
 *.mof
+*.bak
+*.mdf
+*.ldf
 *.dll
 *.exe
 *.pptx
@@ -19,5 +25,9 @@ __pycache__/
 *.sqlite*
 *.db
 *.env
+.env.*
 *.pem
 *.key
+
+# Regenerated large synthetic regression traces
+/Week7Remake/week7/outputs/*_ev_trace_61320.csv

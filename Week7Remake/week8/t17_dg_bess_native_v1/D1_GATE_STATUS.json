@@ -1,0 +1,27 @@
+{
+  "fixture": "DG_BESS_D1_2H_PCS_RESERVE_PRIORITY",
+  "date": "2026-11-20",
+  "native_version": "1.4.2513.0",
+  "controller_feasibility": "NO-GO",
+  "strict_parameter_equivalence": "FAIL",
+  "python_reference": "PASS",
+  "blocking_native_dg_minimum_utilization": {
+    "python": 0.25,
+    "installed_prm": 0.4,
+    "native_field": "PRM::DieselGenerator::DEFAULT_MIN_UTILIZATION",
+    "binding_at_expected_100kw": false
+  },
+  "bess_effective_30pct_surrogate_supported": true,
+  "independent_bess_floor_and_reserve_mapping": "FAIL",
+  "A_aggregate": "NOT RUN",
+  "B_controller_semantics": "INCONCLUSIVE",
+  "C_event_timing": "NOT RUN",
+  "D_native_fixed_1h_visible_clock": "NOT RUN",
+  "E_direct_soc_fuel_telemetry": "NOT RUN",
+  "F_end_to_end_native_and_mof_reread": "NOT RUN",
+  "native_runs": 0,
+  "old_benchmarks_rerun": 0,
+  "raw_integrated_mof": null,
+  "native_event_timeline": null,
+  "python_expected_reserve_event_h": 1.1925333333333332
+}

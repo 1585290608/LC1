@@ -1,0 +1,21 @@
+{
+  "study": "LC1 Stage4 52-start conditional stress tests",
+  "status": "EXPLORATORY_PYTHON_SCREENING",
+  "simulation_count": 1508,
+  "all_valid": true,
+  "paired_baseline_checks": 780,
+  "mission_feedback_count": 52,
+  "native_MDT_runs_new": 0,
+  "HOMER_runs_new": 0,
+  "hour_count_per_run": 168,
+  "weather": "archived 2025 LST profiles",
+  "representative_site": "provisional 120-person camp and 7 EV archetypes",
+  "fuel_transfer": "hour-start instantaneous replenishment, no travel/weather/access constraints or delivery failure probabilities",
+  "no_probability_or_EENS": "52 deterministic starts not outage frequency or expected annual unserved energy",
+  "no_cost_optimisation": "CAPEX illustrative; no resupply or generator repair cost",
+  "max_ac_residual_kwh": 2.842170943040401e-14,
+  "max_battery_residual_kwh": 4.263256414560601e-14,
+  "max_fuel_ledger_residual_l": 2.8990143619012088e-12,
+  "baseline_parity_max_diff": 4.547473508864641e-13,
+  "substantive_limit": "Dispatch reserve SOC is an EMS threshold, not guaranteed minimum in all DG backup states; 10% absolute SOC limit enforced"
+}

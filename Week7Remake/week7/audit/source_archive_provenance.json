@@ -1,0 +1,23 @@
+[
+  {
+    "name": "LC1-main Github 10_11_2026 time1515.zip",
+    "sha256": "9501f728002d1173d2994d411dc964732d62d9e3ec9a7c01131bbc5ae0af15b7",
+    "member_count": 170,
+    "integrity": "PASS",
+    "retained_in_this_package": false
+  },
+  {
+    "name": "LC1_cloud AB.zip",
+    "sha256": "58390d462011aedb63a913ed187638dfdf7222dc1c32efcdc17666e9f1e1812e",
+    "member_count": 96,
+    "integrity": "PASS",
+    "retained_in_this_package": false
+  },
+  {
+    "name": "Research documents.zip",
+    "sha256": "f700dbc0ed6f3f294ec854481254008c207ab3411f92bfb1033bb9ab7e1cb29d",
+    "member_count": 93,
+    "integrity": "PASS",
+    "retained_in_this_package": false
+  }
+]

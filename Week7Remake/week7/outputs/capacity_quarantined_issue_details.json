@@ -1,0 +1,44 @@
+[
+  {
+    "scenario": "central",
+    "pv_kw": 50.0,
+    "wind_kw": 50.0,
+    "bess_kwh": 450.0,
+    "issues": [
+      {
+        "elapsed_hour": 111,
+        "hour_index": 111,
+        "error": "ValueError",
+        "message": "Cannot charge/discharge within same outer interval"
+      }
+    ]
+  },
+  {
+    "scenario": "central",
+    "pv_kw": 75.0,
+    "wind_kw": 75.0,
+    "bess_kwh": 300.0,
+    "issues": [
+      {
+        "elapsed_hour": 148,
+        "hour_index": 148,
+        "error": "ValueError",
+        "message": "Cannot charge/discharge within same outer interval"
+      }
+    ]
+  },
+  {
+    "scenario": "central",
+    "pv_kw": 75.0,
+    "wind_kw": 75.0,
+    "bess_kwh": 450.0,
+    "issues": [
+      {
+        "elapsed_hour": 147,
+        "hour_index": 147,
+        "error": "ValueError",
+        "message": "Cannot charge/discharge within same outer interval"
+      }
+    ]
+  }
+]

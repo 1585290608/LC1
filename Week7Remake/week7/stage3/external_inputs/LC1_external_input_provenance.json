@@ -1,0 +1,12 @@
+{
+  "input_profile_file": "LC1_reference_profiles_8760.csv",
+  "input_profile_sha256": "b181a8dad45f11a94fc278dbe2a135c36eeac6a1a301cdb2d5099b72a16a8455",
+  "case_manifest_file": "LC1_108_external_case_manifest.csv",
+  "case_manifest_sha256": "381e1cfb1687d38684f6b485ac0a49c5c5b077b821d7c8f3bf2ea76a8fe09c93",
+  "fuel_curve_file": "LC1_DG_MDTCatalogue_Fuel_Curve.csv",
+  "fuel_curve_sha256": "cb6981147a7d753978cda93ec4fa7b6d5baa660cf5199af3b018e2ad1ca86a98",
+  "timestamp_convention": "2025 non-leap fixed local standard time, 0-based h, 1 h interval, not UK civil DST",
+  "claimed_native_runs": 0,
+  "native_format_ready": false,
+  "comparability_warning": "The actual DG model is the archived MDT_DERIVED piecewise SFC curve, NOT Settings.fuel_l_per_kwh=0.25. External tools need equivalent load-tier treatment, fuel law, 1h startup, reserve, dump, AC reference, EMS; generic CSV is not native MDT/HOMER format"
+}

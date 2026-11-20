@@ -1,0 +1,28 @@
+{
+  "status": "ILLUSTRATIVE_INPUTS_ONLY_NOT_QUOTATIONS_OR_APPROVED_PROCUREMENT",
+  "historical_economic_source": "models/grid_connected/config/economic-parameters.json",
+  "baseline": {
+    "hypothetical_outage_events_per_year": 1,
+    "delivery_dispatch_fee_gbp_per_attempt": 500.0,
+    "fuel_logistics_premium_gbp_per_accepted_l": 0.20,
+    "critical_unserved_shadow_gbp_per_kwh": 0.0,
+    "noncritical_unserved_shadow_gbp_per_kwh": 0.0,
+    "battery_cost_multiplier": 1.0
+  },
+  "sensitivity": {
+    "hypothetical_outage_events_per_year": [1, 4],
+    "delivery_dispatch_fee_gbp_per_attempt": [0, 500, 1500],
+    "fuel_logistics_premium_gbp_per_accepted_l": [0, 0.2, 0.75],
+    "fuel_price_gbp_per_l": [1, 1.35, 2],
+    "battery_cost_multiplier": [0.7, 1, 1.3],
+    "shadow_case": ["NO_PENALTY", "EXAMPLE_10_100", "EXAMPLE_25_250"]
+  },
+  "warnings": [
+    "No outage probabilities or rates are known: event counts are WHAT-IF assumptions.",
+    "20-year PV of SELECTED cost streams is NOT full NPC, since normal grid operation, site load electricity, system degradation, maintenance downtime, charger costs, taxes and permits are omitted.",
+    "Inherited unit costs, fixed O&M and replacement timing are NOT supplier quotations.",
+    "Fuel consumed is charged once as replenishment stock; accepted delivery litres receive only an incremental transport premium. Trip dispatch fee is charged for each scheduled delivery even if tank headroom rejects fuel.",
+    "Critical/noncritical ENS shadow prices are sensitivity preferences, NOT real tariff/compensation amounts.",
+    "Every 168h outage starts with a full 2000L tank, 70% SOC, and inherited 2025 meteorological/load traces; repeated-event PVs are NOT independent annual operations forecasts."
+  ]
+}

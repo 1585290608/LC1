@@ -1,0 +1,17 @@
+{
+  "class": "RESEARCH_SIMULATION_NOT_NATIVE_MDT_HOMER_OR_REAL_DEPLOYMENT",
+  "nine_candidate_cases": 9,
+  "nine_candidate_valid": 9,
+  "seasonal_cases": 108,
+  "seasonal_valid": 108,
+  "dynamic_fleet_cases": 48,
+  "dynamic_fleet_valid": 48,
+  "stress_cases": 6,
+  "stress_valid": 6,
+  "dynamic_stress_cases": 6,
+  "dynamic_stress_valid": 6,
+  "bess_simultaneous_hourly_count": 0,
+  "native_MDT_cross_validation": 0,
+  "HOMER_Pro_reoptimisation": 0,
+  "quarantined": []
+}

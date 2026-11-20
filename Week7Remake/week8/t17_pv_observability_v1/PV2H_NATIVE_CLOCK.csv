@@ -1,0 +1,5 @@
+index,native_prm_sim_h,outage_relative_h,interpretation,source,native_power_state
+1,24,0,OUTAGE_START,native_attempt_01/native_progress.tsv,
+2,25,1,SCHEDULE_TRANSITION_CLOCK,native_attempt_01/native_progress.tsv,
+3,26,2,OUTAGE_END,native_attempt_01/native_progress.tsv,
+4,26.232032854209443,2.232032854209443,OUTSIDE_OUTAGE,native_attempt_01/native_progress.tsv,

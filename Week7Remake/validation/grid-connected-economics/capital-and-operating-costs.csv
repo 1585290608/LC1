@@ -1,0 +1,100 @@
+﻿case,category,item,quantity,unit,unit_cost_gbp,initial_CAPEX_gbp,annual_cash_gbp,initial_working_inventory_gbp,status,scope
+P0_GRID_ONLY,ANNUAL_OPERATING,Electricity_purchase,1,year,96710.4,0.0,96710.4,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0_GRID_ONLY,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-0.0,0.0,-0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0_GRID_ONLY,ANNUAL_OPERATING,Equipment_OM,1,year,0.0,0.0,0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0_GRID_ONLY,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0_GRID_ONLY,WORKING_INVENTORY,Diesel_stock,0,L,1.35,0.0,0.0,0.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P0R_GRID_DG_UPS,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P0R_GRID_DG_UPS,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P0R_GRID_DG_UPS,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P0R_GRID_DG_UPS,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P0R_GRID_DG_UPS,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P0R_GRID_DG_UPS,ANNUAL_OPERATING,Electricity_purchase,1,year,96710.4,0.0,96710.4,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0R_GRID_DG_UPS,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-0.0,0.0,-0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0R_GRID_DG_UPS,ANNUAL_OPERATING,Equipment_OM,1,year,3100.0,0.0,3100.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0R_GRID_DG_UPS,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P0R_GRID_DG_UPS,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P1_E0_R30,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P1_E0_R30,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P1_E0_R30,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P1_E0_R30,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P1_E0_R30,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P1_E0_R30,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P1_E0_R30,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P1_E0_R30,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P1_E0_R30,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P1_E0_R30,ANNUAL_OPERATING,Electricity_purchase,1,year,39688.14271330113,0.0,39688.14271330113,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E0_R30,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-0.0,0.0,-0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E0_R30,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E0_R30,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E0_R30,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P3_E0_R50,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P3_E0_R50,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P3_E0_R50,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P3_E0_R50,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P3_E0_R50,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P3_E0_R50,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P3_E0_R50,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P3_E0_R50,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P3_E0_R50,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P3_E0_R50,ANNUAL_OPERATING,Electricity_purchase,1,year,40055.37836489478,0.0,40055.37836489478,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R50,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-0.0,0.0,-0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R50,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R50,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R50,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P3_E0_R70,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P3_E0_R70,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P3_E0_R70,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P3_E0_R70,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P3_E0_R70,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P3_E0_R70,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P3_E0_R70,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P3_E0_R70,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P3_E0_R70,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P3_E0_R70,ANNUAL_OPERATING,Electricity_purchase,1,year,40988.83167841361,0.0,40988.83167841361,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R70,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-0.0,0.0,-0.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R70,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R70,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E0_R70,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P1_E20_R30,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P1_E20_R30,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P1_E20_R30,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P1_E20_R30,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P1_E20_R30,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P1_E20_R30,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P1_E20_R30,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P1_E20_R30,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P1_E20_R30,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P1_E20_R30,ANNUAL_OPERATING,Electricity_purchase,1,year,39688.14271330113,0.0,39688.14271330113,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E20_R30,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-87.27430300561215,0.0,-87.27430300561215,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E20_R30,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E20_R30,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P1_E20_R30,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P3_E20_R50,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P3_E20_R50,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P3_E20_R50,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P3_E20_R50,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P3_E20_R50,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P3_E20_R50,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P3_E20_R50,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P3_E20_R50,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P3_E20_R50,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P3_E20_R50,ANNUAL_OPERATING,Electricity_purchase,1,year,40055.37836489478,0.0,40055.37836489478,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R50,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-166.00509733058894,0.0,-166.00509733058894,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R50,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R50,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R50,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0
+P3_E20_R70,CAPEX,PV,50,kWp_DC,1257.0,62850.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"PV assembly including PV inverter, excluding common site works"
+P3_E20_R70,CAPEX,Wind,50,kW,4000.0,200000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Turbine/conversion assembly, excluding common site works"
+P3_E20_R70,CAPEX,BESS_DC,300,kWh,400.0,120000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,DC battery/racks/BMS only; excludes standalone PCS
+P3_E20_R70,CAPEX,BESS_PCS,90,kW,250.0,22500.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Standalone BESS PCS; not counted in DC battery cost
+P3_E20_R70,CAPEX,DG,1,100kW_unit,30000.0,30000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,One100kW backup generator
+P3_E20_R70,CAPEX,UPS,1,30kW_15min_system,20000.0,20000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Separate7.5kWh AC ideal support; no BESS capacity overlap
+P3_E20_R70,CAPEX,Common_site,1,site_allowance,60000.0,60000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,Same civils/switchgear/installation allowance in P0R and hybrid
+P3_E20_R70,CAPEX,Tank_fixed,1,system,8000.0,8000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank fixed infrastructure, excludes fuel"
+P3_E20_R70,CAPEX,Tank_volume,2000,L_capacity,3.0,6000.0,0.0,0.0,ASSUMPTION_ONLY_NOT_QUOTATION,"Tank capacity allowance, not diesel inventory"
+P3_E20_R70,ANNUAL_OPERATING,Electricity_purchase,1,year,40988.83167841361,0.0,40988.83167841361,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R70,ANNUAL_OPERATING,Export_revenue_negative_cost,1,year,-380.2156145922397,0.0,-380.2156145922397,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R70,ANNUAL_OPERATING,Equipment_OM,1,year,13233.75,0.0,13233.75,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R70,ANNUAL_OPERATING,Standing_allowance,1,year,730.0,0.0,730.0,0.0,SCENARIO_ASSUMPTION,Includes paid terminal grid charging in electricity purchase; excludes replacement and initial fuel inventory
+P3_E20_R70,WORKING_INVENTORY,Diesel_stock,2000,L,1.35,0.0,0.0,2700.0,ASSUMPTION_ONLY,Separate from tankCAPEX; recoveredunchanged atyear20; routinefueluse0

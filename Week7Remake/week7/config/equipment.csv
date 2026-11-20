@@ -1,0 +1,15 @@
+category,tier,rated_kw,operating_hours_central_nominal,weekday_only,notes,status
+C4ISR_and_command,c4isr,25,24,false,Aggregated continuous communications and command demand,PROVISIONAL_NOT_MEASURED
+Medical_and_emergency_refrigeration,c4isr,4,24,false,Continuous critical services,PROVISIONAL_NOT_MEASURED
+C4ISR_cooling,c4isr,6,24,false,Exclusive to C4ISR electronics and not in general HVAC,PROVISIONAL_NOT_MEASURED
+Perimeter_security_lighting,c4isr,6,12,false,Outdoor security lighting night schedule,PROVISIONAL_NOT_MEASURED
+Accommodation_ventilation,aux,12,24,false,Electric fans and ventilation only; excludes space heating,PROVISIONAL_NOT_MEASURED
+Accommodation_socket_loads,aux,18,12,false,Occupied-area plug loads; excludes C4ISR and catering,PROVISIONAL_NOT_MEASURED
+Accommodation_lighting,aux,12,8,false,Indoor lights only,PROVISIONAL_NOT_MEASURED
+Catering_electric_cooking,aux,26,8,false,Kitchen cooking and catering; not included in accommodation plug loads,PROVISIONAL_NOT_MEASURED
+Workshops_and_maintenance,aux,18,6,true,Workshop electrical equipment; weekday activity,PROVISIONAL_NOT_MEASURED
+Laundry,aux,12,4,false,Separate laundry equipment,PROVISIONAL_NOT_MEASURED
+Water_pumping_and_treatment,aux,8,6,false,Water handling and treatment,PROVISIONAL_NOT_MEASURED
+Common_area_lighting,aux,8,10,false,Offices and community areas; excludes accommodation lighting,PROVISIONAL_NOT_MEASURED
+Space_heating_electric,aux,30,12,false,Electrically supplied heating only; monthly scheduled; excludes ventilation,PROVISIONAL_NOT_MEASURED
+Summer_cooling_noncritical,aux,6,10,false,Noncritical summer cooling only; seasonal exclusive of heating,PROVISIONAL_NOT_MEASURED

@@ -1,0 +1,22 @@
+work_package,task,name,status,evidence_or_next_gate
+WP0,T00,Baseline preservation,COMPLETED_PYTHON,166 original hashes preserved
+WP0,T01,Assumption audit,PARTIAL,"A/B assumptions documented, site/OEM pending"
+WP0,T02,Validation review,PARTIAL,"DG-only historical MDT, no new native run"
+WP1,T03,Site design basis,PROVISIONAL,120-person design basis requires confirmation
+WP1,T04,Infrastructure load calculation,PROVISIONAL,"14 nonduplicated equipment loads, no site survey"
+WP1,T05,Fleet definition,PROVISIONAL,"7 EV archetypes, no OEM certification"
+WP1,T06,Hourly charging simulation,ADVANCED_PYTHON,Unserved charging now changes vehicle SOC/readiness
+WP1,T07,8760 load profiles,COMPLETED_PROVISIONAL,low/central/high generated and regression checked
+WP2,T08,Original capacity check,COMPLETED_PYTHON,legacy hardware tested under revised demand
+WP2,T09,Expanded capacity sensitivity,ADVANCED_ANNUAL_GRID_COST_REPLAY_NOT_NPC,Stage7 independently reconciles 27 service-matched cases and 567 year-by-year discounted entries; no full NPC
+WP2,T10,Contingency checks,ADVANCED_DETERMINISTIC_CONTINGENCIES,"1508 static 168h tests, 52 EV dynamic; fuel resupply / missed delivery / DG outage and reserve sensitivity, no failure probabilities"
+WP3,T11,Bidirectional capability evidence,BLOCKED_ON_OEM,Only generic EV archetypes available
+WP3,T12,EV emergency discharge model,NOT_STARTED_OPTIONAL,No validated bidirectional power hardware
+WP3,T13,Vehicle to critical load,NOT_STARTED_OPTIONAL,No 10/20/30kW V2B credit
+WP3,T14,Stationary vs mobile cost,NOT_STARTED_OPTIONAL,No OEM equipment/installation costs
+WP4,T15,Outage simulations,ADVANCED_PYTHON,52 starts x 24/72/168h x 9 candidates = 1404; independent initialisation
+WP4,T16,Reliability & economics,ADVANCED_SEPARATE_EV_DEFERRAL_MISSION_AND_ENS,EV slot-deficit separated from nondeferrable ENS and missed departures; still no EENS without probabilities
+WP4,T17,Consistency & validation,INTERNAL_CLOSED_FORM_AND_TRACE_AUDIT_PASSED_NATIVE_PENDING,6 analytic benchmarks / 22 metrics and 5 saved traces / 18024 hours; no genuine new MDT/HOMER runs
+WP5,T18,Methodology update,DRAFT_V0.7_ADDENDUM_UNAPPROVED,"Analytical checks and native-ready input mapping added; not signed off"
+WP5,T19,Research comparison,DRAFT_NORMAL_YEAR_VS_ISLANDED_SEPARATE,"Normal-year 20y cash proxy and 52-start islanded ENS presented as separate axes, not mixed"
+WP5,T20,Supervisor review,AWAITING_SUPERVISOR_D1_D34,"Stage7 adds D27–D34 requests, no approvals inferred"

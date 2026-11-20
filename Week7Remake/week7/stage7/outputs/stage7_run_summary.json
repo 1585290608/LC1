@@ -1,0 +1,44 @@
+{
+  "stage": 7,
+  "research_date": "2026-11-19",
+  "evidence_class": "INTERNAL_CLOSED_FORM_AND_READONLY_LEDGER_VALIDATION_NO_NATIVE",
+  "new_native_MDT_runs": 0,
+  "new_HOMER_Pro_runs": 0,
+  "external_cross_solver_validation_performed": false,
+  "previous_software_comparison": "HISTORICAL_DG_ONLY_24H_NOT_HYBRID",
+  "original_project_files_modified": false,
+  "results": {
+    "analytic": {
+      "benchmarks": 6,
+      "metric_comparisons": 22,
+      "fixture_hourly_input_rows": 75,
+      "passed": 22,
+      "failed": 0,
+      "test_fixture_DG_fuel_l_per_kwh": 0.25,
+      "production_curve_is_not_tested_here": true,
+      "new_native_MDT_runs": 0,
+      "new_HOMER_Pro_runs": 0,
+      "external_validation_completed": false
+    },
+    "independent_trace_audit": {
+      "audited_trace_files": 5,
+      "hourly_rows": 18024,
+      "all_independent_ledgers_passed": true,
+      "no_native_solver_run": true
+    },
+    "HOMER_load_handoff": {
+      "HOMER_single_column_8760h_inputs": 4,
+      "all_8760_rows": true,
+      "external_result_template_rows": 22,
+      "new_native_MDT_runs": 0,
+      "new_HOMER_Pro_runs": 0
+    },
+    "economic_replay": {
+      "cases": 27,
+      "ledger_year_rows": 567,
+      "max_absolute_20y_PV_difference_gbp": 9.313225746154785e-10,
+      "native_homer_npc_comparable": false,
+      "outage_events_counted": 0
+    }
+  }
+}

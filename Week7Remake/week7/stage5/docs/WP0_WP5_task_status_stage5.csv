@@ -1,0 +1,22 @@
+work_package,task,name,status,evidence_or_next_gate
+WP0,T00,Baseline preservation,COMPLETED_PYTHON,166 original hashes preserved
+WP0,T01,Assumption audit,PARTIAL,"A/B assumptions documented, site/OEM pending"
+WP0,T02,Validation review,PARTIAL,"DG-only historical MDT, no new native run"
+WP1,T03,Site design basis,PROVISIONAL,120-person design basis requires confirmation
+WP1,T04,Infrastructure load calculation,PROVISIONAL,"14 nonduplicated equipment loads, no site survey"
+WP1,T05,Fleet definition,PROVISIONAL,"7 EV archetypes, no OEM certification"
+WP1,T06,Hourly charging simulation,ADVANCED_PYTHON,Unserved charging now changes vehicle SOC/readiness
+WP1,T07,8760 load profiles,COMPLETED_PROVISIONAL,low/central/high generated and regression checked
+WP2,T08,Original capacity check,COMPLETED_PYTHON,legacy hardware tested under revised demand
+WP2,T09,Expanded capacity sensitivity,ADVANCED_CONDITIONAL_COST_SCREEN_NOT_OPTIMAL,"9 baseline + 6 refuel choices; 20y selected-cost PV, 486 sensitivities, not full NPC or independent HOMER"
+WP2,T10,Contingency checks,ADVANCED_DETERMINISTIC_CONTINGENCIES,"1508 static 168h tests, 52 EV dynamic; fuel resupply / missed delivery / DG outage and reserve sensitivity, no failure probabilities"
+WP3,T11,Bidirectional capability evidence,BLOCKED_ON_OEM,Only generic EV archetypes available
+WP3,T12,EV emergency discharge model,NOT_STARTED_OPTIONAL,No validated bidirectional power hardware
+WP3,T13,Vehicle to critical load,NOT_STARTED_OPTIONAL,No 10/20/30kW V2B credit
+WP3,T14,Stationary vs mobile cost,NOT_STARTED_OPTIONAL,No OEM equipment/installation costs
+WP4,T15,Outage simulations,ADVANCED_PYTHON,52 starts x 24/72/168h x 9 candidates = 1404; independent initialisation
+WP4,T16,Reliability & economics,ADVANCED_DETERMINISTIC_ECONOMIC_SCREEN_NOT_EENS,52-start ENS and conditional operating cash + explicitly noncash shadow-cost experiments; probabilities missing
+WP4,T17,Consistency & validation,INTERNAL_PREFLIGHT_COMPLETE_NATIVE_PENDING,"Stage5 validates profile/manifest/curve hashes, 8760 timestamps, 166 original hashes, 9 Stage4 artifact hashes, 1508+52 research runs; new MDT=0 HOMER=0"
+WP5,T18,Methodology update,DRAFT_v0.5_UNAPPROVED,T09/T16 cost boundary and cash ledger added; no source quote or NPC evidence
+WP5,T19,Research comparison,DRAFT_EXTENDED_WITH_CONDITIONAL_ECONOMICS,"PV of selected cost streams, 15 alternatives, 486 hypothetical cost preferences and paired critical ENS; no optimum claimed"
+WP5,T20,Supervisor review,AWAITING_SUPERVISOR_D1_D20,"Stage5 handoff adds D16–D20, all decisions still pending"

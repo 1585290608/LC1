@@ -1,0 +1,12 @@
+{
+  "benchmarks": 6,
+  "metric_comparisons": 22,
+  "fixture_hourly_input_rows": 75,
+  "passed": 22,
+  "failed": 0,
+  "test_fixture_DG_fuel_l_per_kwh": 0.25,
+  "production_curve_is_not_tested_here": true,
+  "new_native_MDT_runs": 0,
+  "new_HOMER_Pro_runs": 0,
+  "external_validation_completed": false
+}

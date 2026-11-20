@@ -1,0 +1,38 @@
+{
+  "scenario": "central",
+  "status": "MODELLED_ASSUMPTIONS_NOT_SITE_MEASUREMENTS",
+  "hours": 8760,
+  "fleet_vehicle_count": 7,
+  "timestamp_basis": "2025 source LST (fixed hourly clock, not DST civil clock)",
+  "site_population_assumed": 120,
+  "critical_kwh_year": 332880.0,
+  "aux_kwh_year": 387062.4,
+  "ev_grid_ac_kwh_year": 43958.695652,
+  "ev_battery_dc_kwh_year": 40442.0,
+  "ev_traction_kwh_year": 40442.0,
+  "mission_departures": 1513,
+  "total_kwh_year": 763901.095464,
+  "total_kwh_day_average": 2092.879714,
+  "peak_kw": 195.091304,
+  "ev_shared_charger_kw": 70.0,
+  "ev_charging_efficiency_assumed": 0.92,
+  "min_soc_by_vehicle": {
+    "LU01": 0.7,
+    "LU02": 0.683333333,
+    "LU03": 0.733333333,
+    "LU04": 0.716666667,
+    "ML01": 0.5140625,
+    "ML02": 0.534375,
+    "ME01": 0.83
+  },
+  "end_soc_by_vehicle": {
+    "LU01": 0.9,
+    "LU02": 0.9,
+    "LU03": 0.9,
+    "LU04": 0.9,
+    "ML01": 0.9,
+    "ML02": 0.9,
+    "ME01": 0.9
+  },
+  "no_V2G": "EV charging demand only; EV discharge is propulsion only"
+}

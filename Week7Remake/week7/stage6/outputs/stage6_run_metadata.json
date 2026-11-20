@@ -1,0 +1,18 @@
+{
+  "stage": 6,
+  "date": "2026-11-19",
+  "normal_year_cases": 81,
+  "hours_per_case": 8760,
+  "cases_without_any_unserved_demand": 27,
+  "cases_with_critical_shortfall": 0,
+  "source_data": "PROVISIONAL 120-person camp low/central/high and seven EV archetypes, original 2025 fixed LST weather",
+  "ev_charging_shortfall_caveat": "Unfulfilled EV charging in an hour may be re-requested later; summed hourly EV charging deficits are not permanent lost traction kWh or EENS",
+  "annual_controller": "BESS-before-grid, 90kW PCS, DC efficiency .8944 both directions; DG disabled normal operation",
+  "grid_headroom_kw": "100/150/250 are sensitivity assumptions, not network approvals",
+  "annual_cost": "Normal-year economic proxy that includes grid energy, standing charge, CAPEX, fixed O&M and replacements but not 168h outage economics; not full NPC",
+  "outage_score": "Stage5 52-start deterministic islanded sensitivity stored separately; not EENS",
+  "native_MDT_runs": 0,
+  "native_HOMER_runs": 0,
+  "external_cross_solver_validation": "NOT_PERFORMED",
+  "source_preflight_pass": true
+}

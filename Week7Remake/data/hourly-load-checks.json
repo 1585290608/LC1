@@ -1,0 +1,11 @@
+{
+  "rows": 8760,
+  "c4isr_daily_kwh": 720.0,
+  "aux_daily_kwh": 304.0,
+  "ev_daily_kwh": 80.0,
+  "total_daily_kwh": 1104.0,
+  "peak_kw": 65.0,
+  "mean_kw": 46.0,
+  "annual_kwh": 402960.0,
+  "tier_sum_matches_total": 0.0
+}
