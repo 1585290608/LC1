@@ -1,0 +1,26 @@
+{
+  "run_type": "VERSIONED_POSTPROCESS_OF_ARCHIVED_STAGE3_STAGE4_RESULTS",
+  "evidence": "CONDITIONAL_2025_52_START_EXPLORATORY",
+  "economic_candidates": 15,
+  "baseline_scored_candidates": 15,
+  "sensitivity_grid_assumptions": 486,
+  "sensitivity_scored_cases": 7290,
+  "years": 20,
+  "real_discount_rate": 0.03,
+  "unserved_cost_is_shadow_not_cash": true,
+  "annual_event_count_is_hypothetical_not_failure_frequency": true,
+  "cost_scope": "PV of selected CAPEX, O&M, replacements, fuel consumed and scheduled delivery costs; no normal-operation load/dispatch or electricity revenue; NOT NPC",
+  "source_unit_prices": "INHERITED_PROJECT_ASSUMPTIONS_UNVERIFIED_NOT_SUPPLIER_QUOTATIONS",
+  "new_native_MDT_runs": 0,
+  "new_HOMER_Pro_runs": 0,
+  "external_cross_validation": "NOT_PERFORMED",
+  "t17_internal_preflight": true,
+  "disclaimers": [
+    "No outage probabilities or rates are known: event counts are WHAT-IF assumptions.",
+    "20-year PV of SELECTED cost streams is NOT full NPC, since normal grid operation, site load electricity, system degradation, maintenance downtime, charger costs, taxes and permits are omitted.",
+    "Inherited unit costs, fixed O&M and replacement timing are NOT supplier quotations.",
+    "Fuel consumed is charged once as replenishment stock; accepted delivery litres receive only an incremental transport premium. Trip dispatch fee is charged for each scheduled delivery even if tank headroom rejects fuel.",
+    "Critical/noncritical ENS shadow prices are sensitivity preferences, NOT real tariff/compensation amounts.",
+    "Every 168h outage starts with a full 2000L tank, 70% SOC, and inherited 2025 meteorological/load traces; repeated-event PVs are NOT independent annual operations forecasts."
+  ]
+}

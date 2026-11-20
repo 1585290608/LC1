@@ -1,0 +1,7 @@
+﻿case,export_limit_kw,reserve_SOC,annual_operating_cost_gbp,additional_annual_cost_vs_R30_gbp,additional_NPC_vs_R30_gbp,grid_import_kwh,grid_export_kwh,terminal_SOC,terminal_grid_charge_kwh,basis
+P1_E0_R30,0,0.3,53651.89271330113,0.0,0.0,165367.2613054214,0.0,0.7,134.16815742397137,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"
+P3_E0_R50,0,0.5,54019.12836489478,367.2356515936481,5463.539174447535,166897.40985372826,0.0,0.7,67.08407871198567,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"
+P3_E0_R70,0,0.7,54952.58167841361,1300.6889651124802,19350.96737973299,170786.79866005672,0.0,0.7,0.0,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"
+P1_E20_R30,20,0.3,53564.618410295516,0.0,0.0,165367.2613054214,1745.486060112243,0.7,134.16815742397137,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"
+P3_E20_R50,20,0.5,53853.12326756419,288.5048572686719,4292.223761134082,166897.40985372826,3320.1019466117787,0.7,67.08407871198567,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"
+P3_E20_R70,20,0.7,54572.36606382137,1007.7476535258538,14992.740381014068,170786.79866005672,7604.312291844794,0.7,0.0,"P3 extends P1, same hardware/prices/initial&terminalSOC; no price-awareP2"

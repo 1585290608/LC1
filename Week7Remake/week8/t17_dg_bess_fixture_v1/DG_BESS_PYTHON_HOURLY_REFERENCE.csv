@@ -1,0 +1,3 @@
+outage_start_h,outage_end_h,dg_kwh,bess_ac_kwh,critical_ens_kwh,aux_priority_ens_kwh,aux_lower_ens_kwh,fuel_end_l,soc_end,provenance
+0,1,100,90.0,0,0.0,10.0,100.0,0.36457960644007154,INDEPENDENT_PYTHON_INTERVAL_OVERLAP
+1,2,100,17.328,0,72.672,10.0,75.0,0.3,INDEPENDENT_PYTHON_INTERVAL_OVERLAP

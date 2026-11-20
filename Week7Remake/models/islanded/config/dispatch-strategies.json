@@ -1,0 +1,15 @@
+{
+  "status": "REGISTERED_BEFORE_PRIMARY_RUNS",
+  "primary": {"hours": [24,72,168], "start_index_python": 0, "start_index_MDT_profile": 1, "start": "2025-01-01T00:00:00", "time_standard": "NASA POWER source LST; not Europe/London civil time or verified UTC", "dt_h": 1, "initial_fuel_l": 2000, "initial_soc": 0.7},
+  "S0": "Exact repaired Draft2 step; RE, battery, on-demand DG, critical UPS; no DG charging",
+  "S1": "Exact repaired Draft2 step with feasible DG surplus charging enabled; no simultaneous outer-interval charging/discharging",
+  "S2": "SOC-reserve commitment: initiate when deficit cannot be supplied without crossing SOC 0.30 or SOC<=0.30; latch until RE covers all demand, or SOC>=0.60 and battery can cover deficit above reserve. Committed DG precedes battery; battery bridges startup/exhaustion. No DG charging.",
+  "S3": "S2 plus feasible DG surplus charging",
+  "soc_start_reserve": 0.30,
+  "soc_stop": 0.60,
+  "threshold_provenance": "Illustrative controller assumptions, registered before outcomes, not OEM specifications or tuned optimum",
+  "unsupported": ["No documented minimum runtime", "No ramp or extra startup fuel model", "No real grid-forming/protection/electrical transient validation", "No running-idle fuel state", "MDT-derived positive output below 25% not supported"],
+  "sink": "Draft2 assumed 25 kW AC dump load; no automatic upsizing",
+  "comparison": "Same-start nested deterministic windows, independent initialisation; no Monte Carlo or independent weather samples",
+  "diagnostics": ["fixed-trajectory fuel recalculation before closed-loop comparison", "24h synthetic DG-only 30kW/100L inventory for fuel exhaustion", "single-interval 15kW minimum-load sensitivity with unchanged 25kW sink"]
+}

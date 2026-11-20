@@ -1,0 +1,6 @@
+metric,source,scope,python_reference_kwh,mdt_value_kwh,abs_error_kwh,tolerance_kwh,status,ordered_native_telemetry
+available_kwh,MOF generation plus spill (derived aggregate),outage_aggregate,60.0,60.0,0.0,6.000000000000001e-08,PASS,INCONCLUSIVE
+delivered_kwh,MOF SolarGenerated.Sum,outage_aggregate,50.0,50.0,0.0,5.0000000000000004e-08,PASS,INCONCLUSIVE
+served_kwh,MOF Critical LoadServed.Sum,outage_aggregate,50.0,50.0,0.0,5.0000000000000004e-08,PASS,INCONCLUSIVE
+spill_kwh,MOF SolarEnergySpilled.Sum,outage_aggregate,10.0,10.0,0.0,1e-08,PASS,INCONCLUSIVE
+critical_ens_kwh,MOF Critical LoadNotServed.Sum,outage_aggregate,10.0,10.0,0.0,1e-08,PASS,INCONCLUSIVE

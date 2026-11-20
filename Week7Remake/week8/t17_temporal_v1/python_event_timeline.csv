@@ -1,0 +1,3 @@
+start_outage_h,end_outage_h,state,dg_kw,generated_kwh,fuel_used_l,fuel_remaining_start_l,fuel_remaining_end_l,critical_ens_kwh,evidence_class
+0,10,ON,50,500.0,125.0,125.0,0.0,0.0,PYTHON_STAGE7_FIXED_HOURLY_TRACE_GROUPED_BY_STATE
+10,24.0,NO_FUEL,0,0.0,0.0,0.0,0.0,700.0,PYTHON_STAGE7_FIXED_HOURLY_TRACE_GROUPED_BY_STATE

@@ -1,0 +1,19 @@
+dimension,metric,python_reference,unit,measurement_and_gate,native_status
+PRE,Comparable native configuration,,,Exact readback plus equivalence gates in fixture JSON,NOT RUN
+A,DG generation,200.0,kWh,Whole event kWh and segment energy when exported,NOT RUN
+A,BESS AC discharge,107.328,kWh,Check AC bus convention and position,NOT RUN
+A,BESS AC charge,0.0,kWh,Explicit no DG-to-BESS charge; compare native integral,NOT RUN
+A,AC residual DG+BESS-critical-aux,0.0,kWh,Use native delivered energy and per-tier served,NOT RUN
+A,fuel used,50.0,L,"Fuel integral as exported in gallons, independently convert with pinned gallons-to-L",NOT RUN
+B,fuel left,75.0,L,Ledger from initial stock minus fuel used; own direct tank channel remains INCONCLUSIVE if missing,NOT RUN
+A,BESS DC energy removed,120.0,kWh,Compare independent DC/SOC evidence where available; AC/directional efficiency estimate must be labelled derived,NOT RUN
+A,Critical ENS,0.0,kWh,Use overall critical-tier counter throughout outage,NOT RUN
+A,Aux priority ENS,72.672,kWh,Requires independently attributable Aux priority service counter,NOT RUN
+A,Aux lower ENS,20.0,kWh,Lowest-priority 10 kW block never served,NOT RUN
+A,Total ENS,92.672,kWh,Independent critical plus aux service integral against 400 kWh demand,NOT RUN
+B,initial SOC,0.7,fraction,Verify actual opening statistic or use INCONCLUSIVE,NOT RUN
+B,reserve cutoff SOC,0.3,fraction,Verify stop at 30% and no discharge after cutoff; terminal telemetry separately if missing,NOT RUN
+B,reserve cutoff time,1.1925333333333332,h since outage,"Exact 2236/1875 h, native PRM event clock within 1e-8 h",NOT RUN
+B,PCS peak discharge,90.0,kW,Never exceed 90 kW or use hidden grid/import/storage path,NOT RUN
+B,DG start time,0.0,h since outage,"One successful start with zero delay, compare clock and event",NOT RUN
+C,fixed 1 h native output,,,Record C separately. Outage has a physical off-grid reserve event; evidence must distinguish native event clock and hourly outputs.,NOT RUN

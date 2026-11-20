@@ -1,0 +1,13 @@
+parameter,units,python_v6,native_mdt,mapping_status,scope_or_limitation
+PV archived generation input,p.u.,PV.available = capacity × p.u.,SolarResource.ResourceData,MATCH_AC_AVAILABILITY,Derived AC kW/DC nameplate kW; outer Python PVWatts produces the fraction upstream
+PV nameplate & candidate,kW,Default 50; expanded 100,PV 50 and PV 100 confirmed,MATCH_RATING_SCALING,Benchmark uses PV 50. In archived generation basis PV rating labels normalization to DC nameplate
+PV irradiance/temperature/model,"W/m², °C",Upstream v6 GHI → POA/cell temp/PVWatts,No mapped resource input for GHI/POA/cell temp in tested project,UNMAPPED,Actual conversion physics outside the MDT availability fixtures
+PV inverter,kW AC/fraction,Upstream PVWatts includes DC/AC ratio and inverter factor,Archived zero Inverters. Spec exposes Capacity with normalized feed,UNMAPPED_PHYSICAL,Curtailment at bus differs from inverter clipping/conversion loss
+Wind archived generation input,p.u.,Wind.available = capacity × p.u.,WindResource.ResourceData,MATCH_AC_AVAILABILITY,Already normalized power after upstream speed-to-power and losses
+Wind nameplate & candidate,kW,Default 50; expanded 100,WG 50 and WG 100 confirmed,MATCH_RATING_SCALING,"Benchmark uses WG 50 as scaled reference, no OEM equipment inferred"
+Wind speed/hub height/power curve,"m/s, m, kW",Upstream v6 height-adjusted reference curve,No raw wind-speed/curve route mapped in tested native model,UNMAPPED,Cut-in/rated/cut-out and wind conversion excluded
+BESS power / AC-DC,kW,Python 90 kW PCS; v6 battery rate 300 kW,No active BESS or inverter in these fixtures,ISOLATED,BESS rate is a separate power boundary from PV/Wind rating
+Metering and spill,"kW, kWh",Post-curtailment AC output serves load; explicit spill,GridStatistics Solar/Wind Generated and EnergySpilled,MEASURE_ENABLED,"Compare delivered, spill, served and demand gap separately; no active energy storage or grid"
+Loss accounting,kWh,Ideal 1-bus no loss at modeled boundary,Powerflow=None. Compare source/use residual; physical converter loss not exposed,UNMAPPED_PHYSICAL,"Zero explicit losses is a fixture condition, not an equipment efficiency result"
+Time,h,Stage 7 1 h LST input; benchmark model elapsed time,Hourly resource period; native PRM advance callback/TimeSteps,MAPPED_EVENT_CLOCK,Historic normalized columns use 2025 LST. Fixtures repeat by model day; no BST/calendar-data inference
+Dispatch/topology and load,kW,"Single critical load, ideal AC reference, fractionally served","One v6 bus; BatteryUser controller variant, 0 reserve, 0 fossil, 0 startup delays",CONTROLLED_DIAGNOSTIC,"DG/BESS/UPS disconnected; PRM outage only; native control behavior tested, not assumed"

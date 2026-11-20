@@ -1,0 +1,16 @@
+{
+  "note": "Reduced test fixture. Original host paths omitted.",
+  "original_sha256": "e31d005467e29fa67c908bb6330a438e2c0cc5d8612262b778bf079fd4d806a5",
+  "selected_sources": [
+    {
+      "path": "src/components.py",
+      "sha256": "ab48296f0fef8ff53314afb6ab06047fa18fa7a77a74cb10bead2aa407f96a0b",
+      "role": "FROZEN_DRAFT2_CORE"
+    },
+    {
+      "path": "src/simulate.py",
+      "sha256": "052a9dcfaebe23e1d888a0fd69b0484d6eeebaf94eb1548b327d6decceed9826",
+      "role": "FROZEN_DRAFT2_CORE"
+    }
+  ]
+}

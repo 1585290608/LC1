@@ -1,0 +1,177 @@
+# EN3400 — Proposed Methodology (Version 0.3, working draft)
+
+**Study:** Hybrid Microgrids for Defence Applications (LC1), representative operational-support demand near Sennybridge, Wales.  
+**Evidence classification:** exploratory deterministic simulation. This text is **not** confirmation that the installed loads, electricity connection, EV hardware, or proposed network exist at MOD Sennybridge.  
+**Prepared:** 19 November 2026. **Supervisor scope approval:** NOT RECEIVED.
+
+## 1. Research aims and design boundary
+
+The objective is to investigate the effect of replacing the original LC1 demand assumption with a transparent, representative **120-person operational support camp**, including grid-to-vehicle charging demand, on the feasibility and resilience of a PV–wind–diesel–battery microgrid capable of operating as an island. The principal research questions are: (i) How does a traceable load estimate affect the adequacy of the original 50 kW PV, 50 kW wind, 100 kW diesel and 300 kWh stationary BESS? (ii) How do generation and stationary storage configurations affect critical-service availability during 24/72/168 h outages? (iii) How does reduced delivered EV charging affect vehicle mission readiness? (iv) Which comparisons require independent simulation, OEM evidence or supervisor approval?
+
+The physical/functional boundary is a *single assumed AC bus*. Distribution impedance, three-phase asymmetry, reactive power, voltage, frequency, power quality, switching transients, energy-export agreements and protection coordination are not solved. The assumed generator, battery inverter and UPS do not establish proven grid-forming or black-start capability.
+
+## 2. Prior work and historical preservation
+
+The frozen historical source baseline (S0) and Cloud A/Cloud B exploration are not modified. Original LC1 Python models and the 2025 source weather are preserved inside the development package, with 166 original files tracked by SHA-256. The previous DG-only 24 h MDT parity record remains labelled **historical limited DG-only numerical parity**; it does not establish new PV/wind/BESS/EV parity. Cloud B outputs with names containing `SYNTHETIC` are not field data or native validation.
+
+The following scenario classes must be kept distinct:
+
+| Scenario | Load model | Battery / vehicle support | Present status |
+|---|---|---|---|
+| S0 | Original LC1 1,104 kWh/day assumed aggregate | 50/50 kW renewables, 300 kWh BESS, no bidirectional EV | Frozen historical baseline plus Python reference replay |
+| S1 | New 120-person central/low/high model | Original hardware as adequacy test; broader sizing under examination | Provisional, Python screening only |
+| S2 | Same as S1 | One emergency EV supports critical loads | Not implemented; external V2B technology evidence gate |
+| S3 | Same as S1 | Mission-constrained fleet V2B/V2M | Not implemented; external evidence gate |
+| S4 | Same as S1 | Extra stationary BESS, no V2G/V2B | Completed 300/450/600 kWh sensitivity under assumed hardware costs; not a globally optimal design |
+
+Do **not** label a selected S1 candidate as *optimum* before HOMER or otherwise matched lifecycle-cost optimisation and additional resilience constraints.
+
+## 3. Traceable electricity demand: WP1 T03–T07
+
+Load assumptions are in `week7/config/equipment.csv` (14 mutually exclusive categories) and `week7/config/fleet.csv` (seven model vehicle archetypes, not specific OEM vehicles). The equipment calculations are in `week7/outputs/{low,central,high}_equipment_calculations.csv` and the hourly outputs in `{low,central,high}_load_8760.csv`. Actual military load surveys and mission diaries have not been obtained.
+
+For equipment category *i* with aggregate energised power rating `P_i` (kW), calendar duty indicator `a_i(t)∈{0,1}`, and case utilisation `u_s,i`, power is
+
+\[ P_{s,i}(t)=P_i\,a_i(t)\,u_{s,i}. \]
+
+The critical tier uses 100% of each energised aggregate rating. In the Auxiliary tier the deterministic utilisation factors are **0.65 (low), 0.80 (central), 1.00 (high)**. These are not measured random occupancy distributions. Report annual energy as `Σ_{t=0}^{8759} P(t) × 1 h`, average `kWh/day = annual kWh / 365`, and demand peak as `max_t P(t)`. Seasonal schedules explicitly separate heating, cooling and ventilation to limit double counting; these separations still require site review.
+
+### 3.1 EV service model
+
+The fleet comprises four 75 kWh Light Utility vehicles, two 160 kWh Medium Logistics vehicles, and one 100 kWh Mobile Emergency Support vehicle, all illustrative. Scheduled route distances, per-kilometre consumption, arrival/departure, charger limits and protected mission reserves are explicit assumptions in the fleet CSV. Charge efficiency is **0.92**, charging target SOC **0.90**, and the total shared AC feeder charging limit **70 kW**.
+
+For vehicle *v*, the discrete SOC identity for an interval is
+
+\[ E_{v,t+1}=E_{v,t}+\eta_{EV,ch}P^{served}_{EV,v,t}\Delta t-E^{traction}_{v,t}. \]
+
+Traction use is deducted upon return in the implementation; a planned departure is allowed only if its pre-departure stored energy meets *route kWh + protected mission reserve*. The return/departure logic and charging schedules are reproduced in `week7/load_model.py` and the outage-supply-dependent feedback in `week7/nextstage/fleet_feedback.py`. Missed trips are logged as misses rather than falsely spending propulsion energy. Unavailable/away vehicles do not charge. **No EV battery energy is transferred to the stationary load** in the present model.
+
+### 3.2 Demand supply coupling
+
+The energy system dispatches the EV requested charging as lowest-priority demand after critical and auxiliary loads. The **actual delivered AC charging**, not requested charging, is returned to the fleet model to determine the next vehicle SOC. Thus `EV charging ENS` is the AC supply deficit of charging requested under the dynamic feedback rule; mission cancellations may alter future charging requests, so a static vs dynamic `EV ENS` comparison has different denominators.
+
+## 4. Microgrid model, energy accounting and dispatch
+
+Available intermittent generation is based on the inherited normalised 2025 Sennybridge-specific source series, scaled by PV and wind nameplate kW. Each simulation uses a one-hour source time step (`Δt=1 h`) in fixed **2025 local standard time**, not time-zone-adjusted British Summer Time. Proportional scaling does not account for wind turbine power-curve or array-layout changes.
+
+Power is allocated preferentially to: **C4ISR and other identified critical loads, then Auxiliary, then vehicle charging**. All categories are definitions for this study, not verified Ministry of Defence service priorities. The stationary battery is constrained to 90 kW PCS, `SOCmin=0.10`, `SOCmax=0.90`, and dispatch reserve `SOCreserve=0.30`; per-direction efficiency is **0.8944**. When modelled as stored energy, its state equation is
+
+\[ E^{B}_{t+1}-E^{B}_t =\eta_c P^B_{ch,t}\Delta t - \frac{P^B_{dis,t}\Delta t}{\eta_d}. \]
+
+The diesel is modelled as 100 kW with a provisional 25% minimum ON-power, **one-hour start-up**, an illustrative 25 kW dump sink, and an initial available fuel stock of 2,000 L per outage experiment. The actual numerical DG fuel function is **MDT_DERIVED**, i.e. an archived piecewise specific-consumption catalogue interpolation (see `models/islanded/config/fuel-models.json`); the default `Settings.fuel_l_per_kwh=0.25` is *not* the fuel function used by S3-v2. It must not be passed to a comparator as the active law. The catalogue is not an OEM guarantee. All balance equations account for generated vs delivered/dumped DG energy, renewable curtailment, inverter losses and fuel inventory separately.
+
+The S3-v2 hourly controller is an isolated copy. If diesel runs out partway through an interval, it prospectively prevents diesel-to-battery charging so that a battery discharge later in that same interval does not occur after a charge; it does not weaken the no-simultaneous charge/discharge constraint. The legacy controller and outputs are preserved and are not silently overwritten.
+
+## 5. Experimental design and common initial state
+
+For every scenario, retain the same input weather and demand clock, controller, load-tier sequence, component model, initial BESS SOC **0.70**, initial diesel fuel **2,000 L**, 90 kW PCS, and UPS assumptions. Resetting initial inventory makes each outage a counterfactual *independent initialisation*, not a continuous fleet-operation or failure-process time series. The original four-season reference tests start at **2025-01-01, 2025-04-01, 2025-07-01, 2025-10-01**; each has outage lengths **24, 72 and 168 h** for nine generation/storage configurations. The extended T15 analysis starts once per 7-day block, **52 starts at hour 0, 168, …, 8568**, with the same three outage lengths and nine capacity candidates: **1,404 additional static-load runs**.
+
+Weather-window starts are systematically spaced, not sampled in proportion to true event probability, and do not form a calibrated stochastic weather/outage distribution. The first 52 aligned 168-hour windows cover 8,736 of 8,760 source hours, leaving the final 24 hours outside the weekly set.
+
+Outage contingencies are separately tested for fuel reduction, DG unavailability, lower RE availability and lower initial BESS SOC (see prior-stage outputs). These controls are deterministic; neither generator repair nor fuel logistics probability has been calibrated.
+
+## 6. Performance indicators and economic limitations
+
+For a demand tier `j`, **scenario Energy Not Served** is
+
+\[ ENS_j=\sum_{t\in outage}(P^{req}_{j,t}-P^{served}_{j,t})\Delta t, \]
+
+and **Critical Load Energy Autonomy** is
+
+\[ EA_{critical}=1-\frac{ENS_{critical}}{\sum_{t\in outage}P^{req}_{critical,t}\Delta t}. \]
+
+Each simulated run additionally records total ENS (all tiers), diesel consumed/remaining litres, stationary BESS end SOC, available critical energy, EV departures completed/missed (dynamic subset), physical residuals and illustrative up-front CAPEX. An EA of 100% for an hourly study does not prove uninterrupted voltage/frequency or UPS transfer continuity.
+
+For the 52 weekly windows, report **mean, median, 90th percentile, worst-window ENS**, worst-window critical EA and **count of windows with nonzero critical ENS**. These are *descriptive conditional counterfactual statistics*, not failure probabilities or EENS. A probability-weighted EENS requires justified outage/repair/fuel replenishment probabilities and appropriate scenario weighting. CAPEX values are explicitly assumption-based (see `week7/outage_sensitivity.py`, `COSTS`) and do not constitute HOMER NPC, LCOE, lifecycle OPEX or an economic optimum.
+
+## 7. Validation evidence hierarchy: WP0/WP4 T02/T17
+
+1. **File integrity:** SHA-256 verification of all 166 frozen original source files (user source and Week7 original archive).
+2. **Software regression:** original Python tests plus the Week7 and Stage3 physical checks, including individual EV SOC ledger, conservation, fuel inventory and power bounds.
+3. **Existing native software evidence:** historical controlled DG-only 24 h matched-parameter comparison documented in `validation/diesel-energy-accounting/native-mdt-diesel-comparison.csv`. Its scope must not be broadened.
+4. **New MDT/HOMER cross-validation:** not performed. Generic 8,760-hour profile + 108-case manifest + exact archived DG fuel-curve export and a provenance-gated comparison tool are supplied for subsequent independently saved native projects and outputs. The comparison tool can detect numerical disagreements but cannot authenticate a claimed native export solely from a CSV.
+5. **Real asset validation:** out of scope without approved field data and equipment studies.
+
+## 8. Ethical, engineering and scope limitations
+
+No MOD survey, vehicle routes, classified facility data, exact military operating requirements, or vendor-certified bidirectional interface has been represented. The emergency V2B/V2M scenarios S2/S3 remain **conditional / future work** until vehicle hardware, bidirectional chargers, anti-islanding isolation, grid-forming interface, source protection, reserve controls and costs are evidenced. Future work also includes voltage/frequency stability, black-start, network constraints, non-hourly UPS transfer behaviour and statistically defensible outage-risk estimation.
+
+**Drafting note:** Replace assumed equipment and fleet references with supervisor-approved, permissible sources before dissertation submission. Figures must retain the caption **Exploratory Python simulation; not native MDT/HOMER Pro or site-validated**. No final capacity recommendation is supported at this stage.
+
+---
+
+## Stage 4 Addendum — Deterministic Fuel-Logistics and Generator-Availability Study (v0.4)
+
+The Stage 3 52-window analysis was extended with a separate versioned Stage 4 Python module, preserving the original dispatch code and all historical results. For each 168-hour outage start, conditional scenarios were constructed by fixing the same installed PV/Wind/BESS capacity, 2025 source weather and load, initial stationary battery SOC (70%), diesel nameplate rating (100 kW) and initial tank inventory (2,000 L), and then independently perturbing only fuel arrival, generator availability or dispatch parameters. A total of 52 start hours (one per non-overlapping 168h block in the archived 8,760-hour year) were paired, with all cases independently reinitialised.
+
+At the start of hour *t*, if a requested fuel shipment of `D_t` litres is scheduled, the physically accepted quantity is restricted by tank headroom:
+
+\[D_{t,accepted} = \min(D_t,\max(0,2000-F_t))\]
+
+Fuel inventory after the refill and the same-hour generator operation is updated as
+
+\[F_{t+1}=F_t+D_{t,accepted}-F_{t,consumed}.\]
+
+All supplies beyond remaining tank capacity are recorded as unaccepted. The simulated arrival is assumed instantaneous at the beginning of the specified hourly interval; transport, access, weather, transfer downtime, supplier availability, fuel logistics carbon emissions and economic costs are not included. Diesel forced outages are represented as deterministic time windows (e.g. hours 24–48 or 0–72), with start/stop behaviour governed by the existing simplified DG controller. They are **not** failure-rate estimates.
+
+For each paired condition, the scenario-level Critical Load Energy Autonomy and Energy Not Served are obtained by summing unserved C4ISR-tier energy over 168 hours. The analysis reports average, worst-window and count-of-shortfall-starts **across this fixed set of 52 weather starts**. These descriptive statistics are not interpreted as probabilistic Expected Energy Not Served (EENS), Loss of Load Expectation (LOLE) or empirical power-system reliability.
+
+This extension also tested *controller* reserves of 20/30/40% and DG stop SOC thresholds of 50/60/70%, rather than treating the battery's software reserve as an unbreakable physical minimum; the hard battery SOC limits remain 10–90%. A selected set of cases was repeated using dynamic seven-vehicle SOC feedback, in which unserved EV charging changes the next mission's available traction energy. EVs never export energy into the microgrid; vehicle-to-building integration remains an evidence-gated future extension.
+
+**Results under the provisional assumptions.** The PV 100 kW / Wind 100 kW / BESS 450 kWh baseline had mean Total ENS 767.0 kWh per 168h window and Critical ENS in 15/52 starts. Hypothetical 500 L refuels at hours 48, 96 and 144 gave mean Total ENS 288.0 kWh, zero Critical ENS windows, and mean accepted fuel 1,196.8 L; missing any one arrival reinstated Critical ENS in 2/52 starts. If DG availability was removed over hours 24–48 despite these three deliveries, 41/52 starts showed Critical ENS. These are **not practical service guarantees**: the assumed vehicle access/refuelling capability and DG failure probability are unverified. Nor do these results prove optimal capacity, NPC or field deployment performance.
+
+**Numerical evidence boundary.** Stage4 uses `MDT_DERIVED` DG fuel consumption, with explicit preexisting per-hour component energy-balance checks and a new whole-window fuel-delivery ledger. All 1,508 static-load runs and 52 dynamic EV runs completed; 780 matched Stage3 baseline metric pairs agreed within floating-point tolerance. A total of 96 Python tests passed and the 166 original files retained their published hashes. No new native MDT/HOMER Pro run was performed. Accordingly this remains a *reproducible deterministic numerical sensitivity study* and supervisor/native-solver signoff remains outstanding.
+
+For the exact scenario matrix, calculation source files, disaggregated limitations and figures, see `week7/stage4/docs/T10_T16_Contingency_Results.md` and `week7/stage4/outputs/`.
+
+---
+
+## Stage 5 addendum — Conditional Cost–Resilience and Fuel Logistics Screening (v0.5, 19 November 2026)
+
+**Provenance:** This section is derived from preserved Stage 3/Stage 4 Python outage results; it does not imply fresh native MDT/HOMER Pro computation. The entire cost exercise is *illustrative, scenario-dependent, and not a procurement assessment*. Previously stated source and limitations remain in force.
+
+### Financial boundary and source
+
+The model preserves the existing LC1 finance assumptions in `models/grid_connected/config/economic-parameters.json`: twenty-year horizon, 3% real discount rate, inherited component unit CAPEX, 2.5% fixed annual O&M as a fraction of installed CAPEX, and the original scheduled replacement factors (BESS DC, PCS and UPS in year 12; DG in year 15). These parameters were documented by the original LC1 research as scenario assumptions, not certified defence-site supplier prices. They are retained for model continuity only. Initial fuel working inventory is purchased at year 0 and assumed recoverable at year 20, as in the legacy accounting convention.
+
+For each of fifteen conditional alternatives, the input physical outputs are **52 independent, non-overlapping 168-hour 2025 weather/load windows**, with 2,000 L diesel and 70% BESS SOC reset before every event. Nine capacity options under no-refuel conditions are taken from Stage 3; three specified capacities each have two additional scheduled-refuel choices from Stage 4. The comparisons include the same input load and weather starts; no outage frequency or probability is inferred.
+
+### Cash-flow construction and avoidance of double counting
+
+For each candidate, year-0 installed CAPEX is the sum of PV, Wind, BESS DC, PCS, DG, UPS, site and fuel-tank items. The BESS DC unit cost explicitly excludes the standalone PCS. Mean 168h diesel consumed is charged at the scenario fuel purchase price only **once**, as the replacement cost of consumed fuel inventory. Accepted delivered litres carry an additional, explicitly hypothetical per-litre *logistics premium*; every scheduled delivery event incurs its own *trip/dispatch fee* whether the full fuel volume can enter the tank or not. Delivery volume is never added twice as fuel expense. Year-0 and year-20 fuel working inventory follow the inherited financial convention.
+
+Let \(K\) denote installed CAPEX, \(M=0.025K\) fixed O&M per year, \(R_y\) the pre-registered year-specific replacement amount, \(p_f\) diesel price (£/L), \(q\) fuel consumed per assumed 168h event, \(v\) accepted fuel deliveries per event, \(p_d\) delivery logistics premium (£/accepted L), \(n_d\) dispatched delivery attempts and \(F_d\) dispatch fee (£/attempt). Then the *event-specific cash cost* is
+
+\[
+C_{\mathrm{event}} = q p_f + v p_d + n_d F_d.
+\]
+
+For a purely hypothetical \(N\) identical outage events per year, the present value of **selected** cash streams is
+
+\[
+PV_{\mathrm{selected}}=K+I_0+\sum_{y=1}^{20}\frac{M+R_y+NC_{\mathrm{event}}}{(1+0.03)^y}-\frac{I_{20}}{(1+0.03)^{20}}.
+\]
+
+The inherited inventory convention assumes \(I_0=I_{20}=2,000\,p_f\). This equation does **not** calculate whole-project Net Present Cost (NPC), because normal grid import/exports, 8,760-hour routine DG dispatch and fuel cost, full environmental/maintenance costs, road constraints, charging equipment, tax, financing and procurement are excluded. The 52 equally spaced counterfactual weather starts define an empirical *scenario ensemble*, not the rate of annual emergency events. Therefore neither average ENS nor event-cost PV is EENS.
+
+A non-cash, arbitrary shadow-value scenario is also reported separately, with
+
+\[
+C_{\mathrm{shadow}} = ENS_{\mathrm{critical}}\lambda_c + (ENS_{\mathrm{total}}-ENS_{\mathrm{critical}})\lambda_n.
+\]
+
+The shadow prices \(\lambda_c\) and \(\lambda_n\) express hypothetical preferences for avoided service loss; they are **not verified tariffs**, defence willingness-to-pay estimates or payable penalties. They are never included in the financial cash-flow total, only a separately labelled sensitivity score.
+
+### Scenario settings and interpretation
+
+Baseline illustration: 1 hypothetical 168h event/year, £500 per planned refuelling trip, £0.20 per accepted litre transport premium, and diesel at the archived £1.35/L; no ENS shadow values. Sensitivities vary events/year (1 or 4), trip fee (£0/£500/£1,500), logistics premium (£0/£0.20/£0.75/L), diesel (£1/£1.35/£2/L), battery DC price multiplier (0.7/1/1.3), and shadow preference (none; critical/noncritical £100/£10; or £250/£25 per kWh). These are **486 explicit parameter combinations**, scored for 15 capacity/policy alternatives (7,290 numerical score outputs). No combination counts as a probability distribution.
+
+The sixteen-year-or-more potential lifespan of a real installed battery, OEM degradation, tax, external diesel storage, delivery access and on-site operational permissions are *not established*. All cost assumptions require supplier/defence-context evidence and supervisor sign-off before any final ranking.
+
+### Validation and acceptance boundary
+
+An automated **Stage 5 T17 preflight** checks source-profile SHA-256, 8,760 sequential hourly timestamps, energy tier sums, 108 comparison-case manifest and active `MDT_DERIVED` diesel fuel curve; it also verifies the 166 original frozen file hashes and Stage 4 outputs. These tests are internal provenance and consistency checks, not independent solver verification. New native MDT runs: **zero**; new HOMER Pro runs: **zero**. A final dissertation must distinguish *Python reproducibility*, *historical DG-only 24h MDT agreement*, and *unvalidated new hybrid-site comparisons* in separate evidence categories.
+
+### Decisions required before claiming design optimality
+
+The supervisor must approve or reject: (a) the 120-person representative-site and assumed seven-vehicle fleet, (b) reliability acceptance target for Critical ENS and EV Mission Readiness, (c) feasibility of diesel delivery schedules and DG downtime scenarios, (d) appropriate outage-frequency model or explicit deterministic-only framing, (e) project financial scope including 8,760-hour normal operations, initial working inventory and replacements, (f) permitted use of critical-load value/penalty in multi-objective ranking, (g) which MDT and HOMER Pro cross-tool functions are technically comparable. Without these decisions and external evidence, the study remains an **indicative screening**, not a design recommendation.

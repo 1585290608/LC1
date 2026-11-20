@@ -1,0 +1,31 @@
+{
+  "A_aggregate": "PASS",
+  "B_transition_clock": "PASS",
+  "B_physical_state": "INCONCLUSIVE",
+  "C_visible_fixed_1h_clock": "PASS",
+  "raw_time_coordinates": [
+    "24",
+    "25",
+    "26",
+    "26.232032854209443"
+  ],
+  "ordered_native_power_served_spill_ENS": "INCONCLUSIVE",
+  "prior_P2_W2_B_status_retained": "INCONCLUSIVE",
+  "new_native_runs": 1,
+  "completed_benchmarks_reexecuted": 0,
+  "preservation": {
+    "prior_stage8": 237,
+    "previous_literature_preflight": 4,
+    "baseline": 166,
+    "stage7_output_hashes": 16,
+    "original_package": 367,
+    "v6_models": 9,
+    "tests": {
+      "tests": 143,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "literature_extracted_files_listed": 12
+  }
+}

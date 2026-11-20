@@ -1,0 +1,22 @@
+work_package,task,name,status,evidence_or_next_gate
+WP0,T00,Baseline preservation,COMPLETED_PYTHON,166 original hashes preserved
+WP0,T01,Assumption audit,PARTIAL,"A/B assumptions documented, site/OEM pending"
+WP0,T02,Validation review,PARTIAL,"DG-only historical MDT, no new native run"
+WP1,T03,Site design basis,PROVISIONAL,120-person design basis requires confirmation
+WP1,T04,Infrastructure load calculation,PROVISIONAL,"14 nonduplicated equipment loads, no site survey"
+WP1,T05,Fleet definition,PROVISIONAL,"7 EV archetypes, no OEM certification"
+WP1,T06,Hourly charging simulation,ADVANCED_PYTHON,Unserved charging now changes vehicle SOC/readiness
+WP1,T07,8760 load profiles,COMPLETED_PROVISIONAL,low/central/high generated and regression checked
+WP2,T08,Original capacity check,COMPLETED_PYTHON,legacy hardware tested under revised demand
+WP2,T09,Expanded capacity sensitivity,ADVANCED_PYTHON,"9/9 +108 four-season windows, no HOMER optimal NPC"
+WP2,T10,Contingency checks,ADVANCED_PYTHON,6 fixed/6 dynamic stress scenarios
+WP3,T11,Bidirectional capability evidence,BLOCKED_ON_OEM,Only generic EV archetypes available
+WP3,T12,EV emergency discharge model,NOT_STARTED_OPTIONAL,No validated bidirectional power hardware
+WP3,T13,Vehicle to critical load,NOT_STARTED_OPTIONAL,No 10/20/30kW V2B credit
+WP3,T14,Stationary vs mobile cost,NOT_STARTED_OPTIONAL,No OEM equipment/installation costs
+WP4,T15,Outage simulations,ADVANCED_PYTHON,"24/72/168h x four seasonal windows, 108 static +48 dynamic"
+WP4,T16,Reliability & economics,PARTIAL,"Scenario ENS, EA, fuel, EV readiness; EENS/NPC not justified"
+WP4,T17,Consistency & validation,PARTIAL,78 tests; no new MDT/HOMER parity
+WP5,T18,Methodology update,DRAFT_SUPPORT,Next-stage technical report supplied
+WP5,T19,Research comparison,DRAFT_SUPPORT,Baseline vs new; stationary BESS sensitivity only
+WP5,T20,Supervisor review,AWAITING_USER,No scope approval asserted

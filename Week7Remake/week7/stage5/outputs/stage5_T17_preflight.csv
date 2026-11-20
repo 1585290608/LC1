@@ -1,0 +1,12 @@
+check,status,detail
+profile_source_hash,PASS,SHA-256 b181a8dad45f11a94fc278dbe2a135c36eeac6a1a301cdb2d5099b72a16a8455
+external_manifest_hash,PASS,SHA-256 381e1cfb1687d38684f6b485ac0a49c5c5b077b821d7c8f3bf2ea76a8fe09c93
+active_fuel_curve_hash,PASS,SHA-256 cb6981147a7d753978cda93ec4fa7b6d5baa660cf5199af3b018e2ad1ca86a98
+8760_hour_fixed_LST_and_load_sums,PASS,rows=8760; 2025 LST; no DST correction
+108_case_manifest,PASS,108 rows
+actual_archived_MDT_DERIVED_curve,PASS,"4 points, not constant 0.25 L/kWh"
+original_baseline_preserved,PASS,166/166 matching
+stage4_output_hashes,PASS,9/9 matching
+stage4_research_run_counts,PASS,"static=1508, EV=52, regression_metrics=780"
+stage4_scenario_self_consistency,PASS,"Python validity flags, not external validation"
+native_MDT_or_HOMER_new_evidence,NOT_PERFORMED,No user-produced authenticated native export for revised hybrid model; do not treat generic CSV as native input

@@ -1,0 +1,12 @@
+{
+  "source_kind": "USER_PROVIDED_NATIVE_EXPORT",
+  "software": "REPLACE_WITH_MDT_OR_HOMER",
+  "tool_version": "",
+  "source_export_path": "",
+  "native_result_file_sha256": "",
+  "reference_input_profile_sha256": "b181a8dad45f11a94fc278dbe2a135c36eeac6a1a301cdb2d5099b72a16a8455",
+  "reference_case_manifest_sha256": "381e1cfb1687d38684f6b485ac0a49c5c5b077b821d7c8f3bf2ea76a8fe09c93",
+  "reference_fuel_curve_sha256": "cb6981147a7d753978cda93ec4fa7b6d5baa660cf5199af3b018e2ad1ca86a98",
+  "configuration_equivalence_checklist_signed_off": false,
+  "note": "Set this only after actually using the external software and auditing scenario settings."
+}

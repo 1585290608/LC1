@@ -1,0 +1,187 @@
+{
+  "benchmarks": {
+    "P1": {
+      "A": "PASS",
+      "B": "PASS",
+      "C": "PASS",
+      "native_run_completed": true,
+      "MDT_metrics": {
+        "available_kwh": 40.0,
+        "delivered_kwh": 30.0,
+        "served_kwh": 30.0,
+        "spill_kwh": 10.0,
+        "critical_ENS_kwh": 0.0
+      },
+      "Python_metrics": {
+        "available_kwh": 40.0,
+        "delivered_kwh": 30.0,
+        "served_kwh": 30.0,
+        "spill_kwh": 10.0,
+        "critical_ENS_kwh": 0.0
+      },
+      "AC_residual_kwh": 0.0,
+      "elapsed_s": 8.03100000001723,
+      "visible_fixed_1h_count": 1.0,
+      "native_outage_clocks_h": [
+        "0",
+        "1"
+      ],
+      "expected_resource_edges_observed": true,
+      "mof_path": "native_attempt_01\\P1\\results.mof",
+      "raw_mof_sha256": "6067704e5457b8dd9dbb01216e6757e7c7f2a379dce111a849c5e075c50ee8d8"
+    },
+    "W1": {
+      "A": "PASS",
+      "B": "PASS",
+      "C": "PASS",
+      "native_run_completed": true,
+      "MDT_metrics": {
+        "available_kwh": 35.0,
+        "delivered_kwh": 29.9999999985,
+        "served_kwh": 30.0,
+        "spill_kwh": 5.000000001499998,
+        "critical_ENS_kwh": 0.0
+      },
+      "Python_metrics": {
+        "available_kwh": 35.0,
+        "delivered_kwh": 30.0,
+        "served_kwh": 30.0,
+        "spill_kwh": 5.0,
+        "critical_ENS_kwh": 0.0
+      },
+      "AC_residual_kwh": -1.499998347753717e-09,
+      "elapsed_s": 9.811999999976251,
+      "visible_fixed_1h_count": 1.0,
+      "native_outage_clocks_h": [
+        "0",
+        "1"
+      ],
+      "expected_resource_edges_observed": true,
+      "mof_path": "native_attempt_01\\W1\\results.mof",
+      "raw_mof_sha256": "25c9c3e79bbb346e1c6a55459434767e30954233756459d831134b3c5c379a64"
+    },
+    "P2": {
+      "A": "PASS",
+      "B": "INCONCLUSIVE",
+      "C": "PASS",
+      "native_run_completed": true,
+      "MDT_metrics": {
+        "available_kwh": 389.9999999999999,
+        "delivered_kwh": 300.0000000089999,
+        "served_kwh": 300.0,
+        "spill_kwh": 89.99999999100001,
+        "critical_ENS_kwh": 420.0
+      },
+      "Python_metrics": {
+        "available_kwh": 390.0,
+        "delivered_kwh": 300.0,
+        "served_kwh": 300.0,
+        "spill_kwh": 90.0,
+        "critical_ENS_kwh": 420.0
+      },
+      "AC_residual_kwh": 8.999904821394011e-09,
+      "elapsed_s": 7.875,
+      "visible_fixed_1h_count": 24.0,
+      "native_outage_clocks_h": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "expected_resource_edges_observed": true,
+      "mof_path": "native_attempt_01\\P2\\results.mof",
+      "raw_mof_sha256": "b8a8f6dd65acfd5f76b8dcf7095a967b6e35fb321741745476acc8fce197e329"
+    },
+    "W2": {
+      "A": "PASS",
+      "B": "INCONCLUSIVE",
+      "C": "PASS",
+      "native_run_completed": true,
+      "MDT_metrics": {
+        "available_kwh": 730.0,
+        "delivered_kwh": 540.0,
+        "served_kwh": 540.0,
+        "spill_kwh": 190.0,
+        "critical_ENS_kwh": 180.0
+      },
+      "Python_metrics": {
+        "available_kwh": 730.0,
+        "delivered_kwh": 540.0,
+        "served_kwh": 540.0,
+        "spill_kwh": 190.0,
+        "critical_ENS_kwh": 180.0
+      },
+      "AC_residual_kwh": 0.0,
+      "elapsed_s": 7.8439999999827705,
+      "visible_fixed_1h_count": 24.0,
+      "native_outage_clocks_h": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "expected_resource_edges_observed": true,
+      "mof_path": "native_attempt_01\\W2\\results.mof",
+      "raw_mof_sha256": "cd9ffe9450c9abc2b9f898454656f1b7d5c7db109186fdad77dace6bbdf5fbed"
+    }
+  },
+  "physics_of_irradiance_to_PV_or_speed_to_wind": "NOT RUN",
+  "native_ordered_hourly_power_trace": "INCONCLUSIVE",
+  "preservation": {
+    "stage7_junit": {
+      "tests": 143,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "baseline": 166,
+    "original_package": 367,
+    "stage7_outputs": 16,
+    "stage8_DG": 68,
+    "stage8_temporal": 29,
+    "stage8_BESS": 62,
+    "v6_MBFs": 9
+  }
+}

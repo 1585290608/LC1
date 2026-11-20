@@ -1,0 +1,22 @@
+work_package,task,name,status,evidence_or_next_gate
+WP0,T00,Baseline preservation,COMPLETED_PYTHON,166 original hashes preserved
+WP0,T01,Assumption audit,PARTIAL,"A/B assumptions documented, site/OEM pending"
+WP0,T02,Validation review,PARTIAL,"DG-only historical MDT, no new native run"
+WP1,T03,Site design basis,PROVISIONAL,120-person design basis requires confirmation
+WP1,T04,Infrastructure load calculation,PROVISIONAL,"14 nonduplicated equipment loads, no site survey"
+WP1,T05,Fleet definition,PROVISIONAL,"7 EV archetypes, no OEM certification"
+WP1,T06,Hourly charging simulation,ADVANCED_PYTHON,Unserved charging now changes vehicle SOC/readiness
+WP1,T07,8760 load profiles,COMPLETED_PROVISIONAL,low/central/high generated and regression checked
+WP2,T08,Original capacity check,COMPLETED_PYTHON,legacy hardware tested under revised demand
+WP2,T09,Expanded capacity sensitivity,ADVANCED_PYTHON_NONOPTIMAL,9 capacities + 4-season 108 cases + 52-start 1404 cases; no NPC or HOMER optimisation
+WP2,T10,Contingency checks,ADVANCED_PYTHON,6 fixed/6 dynamic stress scenarios
+WP3,T11,Bidirectional capability evidence,BLOCKED_ON_OEM,Only generic EV archetypes available
+WP3,T12,EV emergency discharge model,NOT_STARTED_OPTIONAL,No validated bidirectional power hardware
+WP3,T13,Vehicle to critical load,NOT_STARTED_OPTIONAL,No 10/20/30kW V2B credit
+WP3,T14,Stationary vs mobile cost,NOT_STARTED_OPTIONAL,No OEM equipment/installation costs
+WP4,T15,Outage simulations,ADVANCED_PYTHON,52 starts x 24/72/168h x 9 candidates = 1404; independent initialisation
+WP4,T16,Reliability & economics,PARTIAL,"Scenario ENS, conditional distribution, EA/fuel; no EENS/NPC"
+WP4,T17,Consistency & validation,PREFLIGHT_READY_NATIVE_PENDING,"Generic 8760h reference, 108-case manifest and actual archived fuel curve; no new native MDT/HOMER runs"
+WP5,T18,Methodology update,DRAFT_COMPLETED_UNAPPROVED,EN3400_methodology_draft_v0.3.md; requires supervisor and source signoff
+WP5,T19,Research comparison,DRAFT_COMPARISON_COMPLETED,S0/S1/S4 numerical comparison and 52-start figures; S2/S3 not simulated
+WP5,T20,Supervisor review,AWAITING_SUPERVISOR_REVIEW,Decision handoff D1-D9 prepared; no approval recorded

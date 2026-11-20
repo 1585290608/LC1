@@ -1,0 +1,23 @@
+assumption,Original_LC1_GitHub_Draft3,Cloud_A_historical,Cloud_B_synthetic,Week7_extension,validation_status
+Site_definition,Representative Sennybridge-area 2025 LST synthetic load,Historical A source archive not materialised in AB package,Synthetic time-series prototype not actual MOD load,Proposed 120-person operational support camp envelope not site survey,NOT_SITE_VERIFIED
+Daily_site_kwh,1104,Not provided as comparable original series,Synthetic run scenarios,Three fresh 8760h scenarios computed from explicit equipment and EV duty,ORIGINAL_AND_NEW_PYTHON_CHECKED
+Solar_PV_kw,50,75 or 100 selected configurations,Per input synthetic row,50 75 or 100 tested,ALTERNATIVE_DESIGNS_NOT_SAME_BASELINE
+Wind_kw,50,75 or 100 selected configurations,Per input synthetic row,50 75 or 100 tested,ALTERNATIVE_DESIGNS_NOT_SAME_BASELINE
+Diesel_Generator_kw,100,2 x 100 reported,200 assumed,100 fixed in Week7 sweep,OEM_NOT_VERIFIED
+Diesel_fuel_stock_l,2000,3000 reported,3000 default assumed,2000 and 500 stress,ASSUMED_NOT_MEASURED
+Diesel_fuel_model,0.25 L/kWh fixed or archived MDT_DERIVED load-dependent curve,No new source rerun in cloud AB,0.30 L/kWh synthetic and no min-load/startup,Existing MDT_DERIVED curve unchanged; positive-load domain checked only in prior controlled DG-only protocol,CANNOT_POOL_FUEL_FORMULATIONS
+Diesel_min_load,25% research assumption,Unknown/ambiguous for source A,Not represented,25% unchanged; assumed 25kW dump sink,NOT_OEM_VERIFIED
+DG_startup,1 hour cold start in original,Not comparable,Instant output synthetic simplified,1 hour unchanged,NOT_DYNAMIC_VALIDATED
+BESS_kwh,300,300,300,300 450 600 candidates,NOT_OPTIMIZED_HOMER
+PCS_kw,90,120,120,90 held fixed in Week7,PCS_LARGE_DESIGNS_NEED_REVIEW
+Battery_eta_charge_discharge,0.8944/0.8944,Unknown for genuine A,.95/.95,0.8944/0.8944 unchanged,CONTROL_FORMULATION_DIFFERENT
+BESS_soc_limits,minimum .10 maximum .90 reserve .30,Unknown,.10 minimum and no specified .90 hard cap,.10/.90 reserve .30 initial .70,CONTROL_FORMULATION_DIFFERENT
+BESS_commit_stop_soc,.60 (S2/S3),Unknown,Threat reserve target .70 (different model),.60 S3 policy,CONTROL_FORMULATION_DIFFERENT
+Load_priority,C4ISR > auxiliary > EV,Historical screen metrics not direct dispatch,critical > aux > EV,C4ISR > auxiliary > EV retained; 7 EV charging treated as flexible load,UNIFIED_NUMERICAL_ORDER_ONLY
+Grid_import_limit_kw,100 hypothetical in peacetime,Not independently confirmed,1000 placeholder,Not used as islanded import; new site peak exceeds 100 so peacetime grid check outstanding,NOT_GRID_APPROVED
+Vehicle_mission_readiness,EV aggregate 80 kWh/day no individual vehicle SOC,Not evidenced,Flexible EV deferral synthetic,Individual 7 vehicle schedule/charging SOC with mission-energy and shared70kW guard,CONSTRAINED_ILLUSTRATIVE_ONLY
+Vehicle_V2G,None credited,Unknown,None credited,None credited; future work only,NO_BIDIRECTIONAL_CAPABILITY_VERIFIED
+Weather,time-stamped 2025 source LST NASA POWER-derived,Unavailable raw 144/359 matrix in uploaded cloud AB,Generated synthetic demonstration,Unchanged same 2025 pu weather used; time-index alignment,DETERMINISTIC_ONLY
+Native_MDT_parity,Prior saved controlled DG-only parity; no full hybrid parity,No native rerun in cloud A,Not native MDT,No new native MDT run; Python conservation checks only,PARTIAL_OR_UNVERIFIED
+HOMER_capacity_optimization,Not proven in this repo,Historical 144 candidates not independently recovered,Not a HOMER model,Nine-point numerical capacity screen only,NOT_HOMER_OPTIMUM
+Economic_cost_basis,Illustrative 2026 GBP and no approved tariff,Historical NPC figures reported but not independently recalculated,Synthetic no same cost boundary,Indicative equipment-only CAPEX with fixed inherited unit costs; not NPC,INDICATIVE_ONLY

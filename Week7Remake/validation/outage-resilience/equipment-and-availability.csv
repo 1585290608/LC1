@@ -1,0 +1,19 @@
+﻿scenario,system,nominal_PV_kw,nominal_wind_kw,RE_availability_multiplier,effective_PV_computational_coefficient_kw,effective_Wind_computational_coefficient_kw,active_BESS_kwh,active_PCS_kw,DG_kw,UPS_kw,UPS_initial_AC_kwh,fuel_tank_capacity_l,note
+C1_Winter_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Winter_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Spring_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Spring_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Summer_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Summer_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Autumn_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C1_Autumn_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C2_F500_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C2_F500_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C2_F1000_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C2_F1000_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C3_SOC30_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C3_SOC50_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C4_CONTROL_P0R,P0R,0,0,1.0,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C4_STRESS_P0R,P0R,0,0,0.6,0.0,0.0,0,0,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C4_CONTROL_HYBRID,HYBRID,50,50,1.0,50.0,50.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.
+C4_STRESS_HYBRID,HYBRID,50,50,0.6,30.0,30.0,300,90,100,30,7.5,2000,SettingsPV/Wind encode effectiveavailability coefficient; nominalhardware fixed. P0R internalPCSzereoBattery inactive; noBESSenergy credited.

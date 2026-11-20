@@ -1,0 +1,19 @@
+{
+  "status":"REGISTERED_BEFORE_DRAFT3C_RUNS",
+  "primary_fuel_model":"MDT_DERIVED",
+  "fuel_scope":"Unchanged Draft3A catalogue interpolation on actualON25-100kW; idle/extra startup fuel not verified",
+  "hardware":{"PV_kw":50,"Wind_kw":50,"BESS_kwh":300,"PCS_kw":90,"DG_kw":100,"UPS_kw":30,"UPS_minutes":15,"tank_capacity_l":2000},
+  "dispatch":{"hybrid":"S3","conventional":"S0 on-demandDG with RE/PCS disabled","reserve_SOC":0.3,"commitment_stop_SOC":0.6,"cold_start_h":1},
+  "initial":{"fuel_l":2000,"BESS_SOC":0.7,"UPS_AC_stock_kwh":7.5,"DG":"OFF_COLD","refueling":false},
+  "C1":{"duration_h":168,"dates":["2025-01-01","2025-04-01","2025-07-01","2025-10-01"],"systems":["P0R","HYBRID"],"classification":"Four distinct deterministic sourceLST weather windows; no statistical reliability inference"},
+  "C2":{"duration_h":168,"start":"2025-01-01T00:00:00","initial_fuel_l":[500,1000,2000],"systems":["P0R","HYBRID"],"other_settings":"Fixed identical to C1winter"},
+  "C3":{"duration_h":168,"start":"2025-01-01T00:00:00","initial_SOC":[0.3,0.5,0.7],"initial_fuel_l":2000,"system":"HYBRID","controller_thresholds":"Fixed0.3/0.6; only initialSOC changes","cost_link":"Draft3B reserve floors used as hypothetical outage-startSOC lower-bound conditions, not a joint probabilistic grid/outage simulation"},
+  "C4":{"duration_h":336,"start":"2025-01-01T00:00:00","systems":["P0R","HYBRID"],"control":"Matched336h fullresource,DGavailable control for each system","stress_RE_multiplier":0.6,"DG_unavailable_elapsed_start_h":48,"DG_unavailable_elapsed_end_h":72,"DG_interval":"2025-01-03T00:00:00 inclusive through2025-01-04T00:00:00 exclusive, sourceLST","return_state":"Cold, original1h startup required on next actual command","fuel_l":2000,"classification":"Artificial deterministic combined contingency, not historical extreme weather or combat validation"},
+  "fuel_exhaustion_guard":{"policy":"Retain Draft3A nocharge/dischargewithinouterhour constraint. If remainingfuel cannot sustain the predicted positiveDG operation to the end of this hour, inhibitDG-to-BESS charging for thathour, dump remaining minimum-load surplus in existing25kW sink, and letBESS bridge post-exhaustion load. No fuel, capacity or startup parameter is changed.","scope":"Conservative documented controller safeguard at finite-fuel exhaustion only; not a change to frozen Draft3A or real hardware certification"},
+  "resolution":"1h weather/load/dispatch; exactDGON/OFFfuel intervals and idealUPS energy allocation retained as bookkeeping, not electrical transients",
+  "critical_shortfall_reporting":"Primary first-shortfall duration is hour-boundary lowerbound with onehour bracket; optional piecewise-model onset separately labelled",
+  "conventional_BESS":"No activeBESS. Internal unchangedBattery object withPCS0 is numerical scaffolding only; SOC metrics NOT_APPLICABLE; no storedenergy credited.",
+  "AC_reference":"Inherited assumed energizedACreference; renewable acceptance duringDG failure is not proof of grid-forming capability",
+  "native_hybrid_status":"PARTIALLY_COMPARABLE, not MDT parityverified",
+  "scope":"18unique configurations, one reused winter baseline,17newmain runs; no broad optimisation, no new Draft3A/B economic runs, no IEEE LaTeX"
+}

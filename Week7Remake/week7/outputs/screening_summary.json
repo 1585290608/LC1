@@ -1,0 +1,16 @@
+{
+  "version": "W7_PRELIMINARY_SCREENING",
+  "status": "NUMERICAL_RESULTS_ONLY",
+  "native_MDT_executions": 0,
+  "homer_executions": 0,
+  "baseline_checked": 9,
+  "original_site_reruns": 3,
+  "capacity_candidates": 9,
+  "contingency_cases": 5,
+  "capacity_valid": 6,
+  "capacity_invalid": 3,
+  "baseline_valid": 9,
+  "contingency_valid": 5,
+  "cost_boundary": "Illustrative source config 2026 GBP CAPEX only, no lifecycle NPC, no pricing verification",
+  "critical_note": "No EV V2G support is credited; energy model assumes AC reference during DG downtime and is not physical certification"
+}

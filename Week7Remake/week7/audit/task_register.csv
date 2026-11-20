@@ -1,0 +1,22 @@
+task,priority,status,evidence,blocker
+T00,P0,DONE,baseline_sha256.csv and check_preservation.py,Original source archives are held separately and digest registered
+T01,P0,DONE,assumption_matrix.csv,Some historical A fields unknown due to missing authentic raw matrix
+T02,P0,PARTIAL,validation_gap_report.md,Full archived Draft3A/B/C and new native MDT runs unavailable
+T03,P0,PROVISIONAL,site_design_basis.md,Representative buildings and 120-person size not backed by survey
+T04,P0,PROVISIONAL,outputs/*_equipment_calculations.csv,Equipment ratings and utilisation are engineering assumptions
+T05,P0,PROVISIONAL,config/fleet.csv,No OEM or mission log evidence
+T06,P0,PYTHON_VERIFIED,outputs/*_ev_trace_61320.csv,Charging profile is deterministic hypothetical duty
+T07,P0,PYTHON_VERIFIED,outputs/*_load_8760.csv,Requires site-grounded revisions before final sizing
+T08,P1,PYTHON_VERIFIED,outputs/revised_load_original_hardware_outage_matrix.csv,No physical microgrid validation
+T09,P1,PARTIAL,outputs/capacity_screen_nine_options_168h.csv,3 of 9 quarantined; one winter window; no full HOMER optimisation
+T10,P1,PRELIMINARY,outputs/contingency_screen_168h.csv,Fuel initial condition and 24h DG downtime only; no full fault study
+T11,P2,NOT_STARTED,none,Need OEM bidirectional and islanding capability data
+T12,P2,NOT_STARTED,none,EV stationary emergency discharge model deliberately excluded
+T13,P2,NOT_STARTED,none,No V2G power tests or 10/20/30 kW discharge claims
+T14,P2,NOT_STARTED,none,Additional stationary capacity tested but not compared with V2G
+T15,P1,PYTHON_VERIFIED,outputs/revised_load_original_hardware_outage_matrix.csv,Same winter start only
+T16,P1,PARTIAL,output matrices with scenario ENS fuel and SOC,EENS absent without probabilities; life-cycle economic not recalculated
+T17,P1,PARTIAL,tests/test_week7.py and validation_gap_report.md,New native MDT parity outstanding
+T18,P1,DRAFTED,methodology_notes.md,Supervisor requirements and final project scope to be confirmed
+T19,P2,PRELIMINARY,load_calculation_report.md,No credible EV V2G comparison yet
+T20,P1,NOT_STARTED,none,Supervisor scope approval cannot be self-issued

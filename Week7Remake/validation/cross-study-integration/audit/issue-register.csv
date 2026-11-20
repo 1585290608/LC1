@@ -1,0 +1,13 @@
+Priority,Issue,Impact,Action,Status
+CRITICAL,Grid-forming voltage and frequency control not simulated,Islanded supply may be physically infeasible when diesel is off,Require converter and protection study,NOT_VERIFIED
+CRITICAL,UPS 15-minute model versus 1-hour DG cold start,Initial critical service is sensitive to unverified transfer assumptions,Obtain true startup/UPS sequence,NOT_VERIFIED
+HIGH,Real MOD site load unavailable,Extrapolation to operational military site unsupported,Keep demand labelled synthetic; obtain authorised site data,ASSUMPTION
+HIGH,MDT Hybrid parity not established,Cannot claim native whole-system software validation,Use only limited DG-only parity,PARTIAL
+HIGH,OEM generator fuel consumption unverified,Large predicted litre differences across models,Obtain manufacturer positive-load and idle fuel maps,ASSUMPTION
+HIGH,Wind output and installation site uncertainty,Financial benefit can change sign,Carry wind/yield sensitivities and field assessment,ASSUMPTION
+HIGH,Export tariff and DNO permission unknown,Conditional export revenue unconfirmed,Present both no-export and conditional scenarios,ASSUMPTION
+HIGH,Capital and replacement costs illustrative,12.24-year payback not procurement advice,Obtain supplier and EPC quotes,ASSUMPTION
+HIGH,Deterministic seasonal selection,No outage probability or confidence intervals,Limit conclusions to simulated windows,BOUNDARY
+MEDIUM,Initial/final SOC mismatch in islanded cases,Fuel changes partly reflect storage inventory,Disclose initial and final SOC in comparisons,DISCLOSED
+MEDIUM,2026 Scope 2 update differs from frozen Draft3B 2025 factors,Inconsistent reported emissions if not labelled,Label updated factor post-study and preserve earlier comparison,RESOLVED_IN_D4
+BLOCKER,Formal Cardiff EN3400 submission guidelines not supplied,Cannot certify official dissertation compliance,Request final module assessment brief,PENDING_SUPERVISOR
