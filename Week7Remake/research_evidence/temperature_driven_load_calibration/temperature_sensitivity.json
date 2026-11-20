@@ -1,0 +1,21 @@
+{
+  "scenario_id": "temperature_sensitivity",
+  "evidence_class": "TEMPERATURE_ADJUSTED_SCENARIO",
+  "status": "NOT RUN",
+  "admission": "EVIDENCE_GAP",
+  "baseline_reference": "central_load_8760.csv; Low/High remain independent frozen envelopes",
+  "weather_input": "data/temp.csv; 8,760 Sennybridge T2M hours, 2025 fixed LST",
+  "space_heating_balance_temperature_c": null,
+  "site_heating_electric_slope_kw_per_c": null,
+  "site_heating_equipment_type": null,
+  "site_cop_or_efficiency_map": null,
+  "site_cooling_balance_temperature_c": null,
+  "site_cooling_electric_slope_kw_per_c": null,
+  "adjusted_profile": null,
+  "monthly_comparison": null,
+  "annual_energy_difference_kwh_e": null,
+  "peak_difference_kw": null,
+  "outage_24_72_168h": "NOT RUN",
+  "condition": "Obtain a complete-year, equipment-matched, end-use-separated electric and verified outdoor temperature dataset, or independently supported building heat loss and matching HVAC electrical specifications. Validate before assigning parameters.",
+  "accounting": "Replace only a calibrated HVAC end-use term at identical timestamps. Preserve C4ISR, medical, security, separately metered ventilation, general loads and EV. Keep any uncalibrated cooling term on the frozen schedule."
+}

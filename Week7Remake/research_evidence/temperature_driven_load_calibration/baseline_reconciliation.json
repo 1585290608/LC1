@@ -1,0 +1,85 @@
+{
+  "evidence_class": "MODELLED_BASELINE",
+  "clock": "2025 NASA POWER fixed LST, UTC+0 index band, no DST",
+  "hourly_matches_per_case": 8760,
+  "offset_hours": 0,
+  "missing_duplicate_nonfinite_or_shifted_hours": 0,
+  "raw_processed_T2M_mismatches": 0,
+  "max_hourly_tier_or_site_residual_kw": "0",
+  "baseline_input_sha256": {
+    "week7/config/equipment.csv": "56766bb41324d1de9bad00d36b7c7e8ed443f40189af464e3a0bf2a787b1fa8a",
+    "data/nasa-power-sennybridge-2025.csv": "2a59fbfd46bdb9b2cb24b67436dacd43ec8e42108ce4269e8506f8158b52e120",
+    "data/temp.csv": "583d17be2e65d7f5012d70aa722386e19f540dfa3b2aabdc4a13d6113514f48c",
+    "week7/outputs/low_load_8760.csv": "3fe4d13077e621f674af997ea9392626a97c4daba7b997e3f3d0f0b633481e89",
+    "week7/outputs/central_load_8760.csv": "5bd278b48e9ec0607273255fe7763c7364d896c6a31ce68eb9806d90c3084660",
+    "week7/outputs/high_load_8760.csv": "e61c49bf8ac1037a090ec2b4f32fd1c9c64b1d1ca1cc01e3168f2d050f9d063f"
+  },
+  "scenarios": {
+    "low": {
+      "annual_kwh_e": "682535.156465",
+      "monthly_to_annual_residual_kwh_e": "0.000000",
+      "peak_kw": "172.143478",
+      "first_peak_timestamp_LST": "2025-01-02T18:00:00",
+      "annual_heating_kwh_e": "59124.000000",
+      "annual_noncritical_cooling_kwh_e": "3588.000000",
+      "DJF": {
+        "days": 90,
+        "mean_t2m_c": "4.209565",
+        "mean_kwh_e_per_day": "1935.538937",
+        "heating_kwh_e": "21060.000000",
+        "noncritical_cooling_kwh_e": "0.000000"
+      },
+      "JJA": {
+        "days": 92,
+        "mean_t2m_c": "15.577056",
+        "mean_kwh_e_per_day": "1735.552268",
+        "heating_kwh_e": "0.000000",
+        "noncritical_cooling_kwh_e": "3588.000000"
+      }
+    },
+    "central": {
+      "annual_kwh_e": "763901.095464",
+      "monthly_to_annual_residual_kwh_e": "0.000000",
+      "peak_kw": "195.091304",
+      "first_peak_timestamp_LST": "2025-01-02T18:00:00",
+      "annual_heating_kwh_e": "72768.000000",
+      "annual_noncritical_cooling_kwh_e": "4416.000000",
+      "DJF": {
+        "days": 90,
+        "mean_t2m_c": "4.209565",
+        "mean_kwh_e_per_day": "2173.633671",
+        "heating_kwh_e": "25920.000000",
+        "noncritical_cooling_kwh_e": "0.000000"
+      },
+      "JJA": {
+        "days": 92,
+        "mean_t2m_c": "15.577056",
+        "mean_kwh_e_per_day": "1927.436531",
+        "heating_kwh_e": "0.000000",
+        "noncritical_cooling_kwh_e": "4416.000000"
+      }
+    },
+    "high": {
+      "annual_kwh_e": "871656.369552",
+      "monthly_to_annual_residual_kwh_e": "0.000000",
+      "peak_kw": "225.000000",
+      "first_peak_timestamp_LST": "2025-01-02T18:00:00",
+      "annual_heating_kwh_e": "90960.000000",
+      "annual_noncritical_cooling_kwh_e": "5520.000000",
+      "DJF": {
+        "days": 90,
+        "mean_t2m_c": "4.209565",
+        "mean_kwh_e_per_day": "2489.042089",
+        "heating_kwh_e": "32400.000000",
+        "noncritical_cooling_kwh_e": "0.000000"
+      },
+      "JJA": {
+        "days": 92,
+        "mean_t2m_c": "15.577056",
+        "mean_kwh_e_per_day": "2181.295664",
+        "heating_kwh_e": "0.000000",
+        "noncritical_cooling_kwh_e": "5520.000000"
+      }
+    }
+  }
+}
