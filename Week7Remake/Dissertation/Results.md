@@ -1,0 +1,42 @@
+
+# Results draft
+
+This draft presents the retained outputs of the 2025 fixed-LST LC1 study. The camp demand profiles, equipment and operating rules are modelling assumptions. Full definitions and source-linked workings are given in the [Methodology](Methodology.md). Figures are drawn from the [existing figure library](Figure_Plan.md).
+
+## 1. Annual and seasonal electricity demand
+
+| Baseline | Annual electricity (MWh) | Daily average (kWh/day) | Mean (kW) | Peak hourly power (kW) |
+| --- | ---: | ---: | ---: | ---: |
+| Low | 682.54 | 1,869.96 | 77.91 | 172.14 |
+| Central | 763.90 | 2,092.88 | 87.20 | 195.09 |
+| High | 871.66 | 2,388.10 | 99.50 | 225.00 |
+
+The Critical tier contributes 332.88 MWh in each case. Central includes 72.768 MWh of heating, 4.416 MWh of summer cooling and 43.959 MWh of planned EV AC charging. The Original Central monthly electricity is about 67.475 MWh in January and October, and 57.803 MWh in June. The DJF mean is 2,173.63 kWh/day versus 1,927.44 kWh/day in JJA. Winter heating and the calendar explain this difference within the model. The US Army temperate comparison gives 2,062.83 kWh/day after a fixed C2 allowance, remaining-load personnel scaling and the LC1 scheduled EV addition. Central is 1.46% above that constructed proxy. The proximity supports a scale comparison subject to different demand boundaries and heat sources. [Monthly results](../research_evidence/temperature_driven_load_calibration/monthly_baseline.csv) · [Annual case and seasonal summaries](../research_evidence/hdh_heating_sensitivity/HDH_SCENARIO_SUMMARY.csv) · [Comparator](../research_evidence/load_evidence_sprint/SCENARIO_COMPARISON.csv) · [Figures 02–04](Figure_Plan.md#2-load-modelling)
+
+## 2. PV and wind resource and dispatch
+
+Normalised 2025 availability integrates to **1,104.66 kWh/kW DC** of PV and **3,759.63 kWh/kW rated** of wind before dispatch. The separate Original 168 h dynamic winter outage trace delivers 419.96 kWh of PV and 4,489.71 kWh of wind, with zero renewable curtailment recorded in this specific run. At the first interval, renewable delivery is from wind only. These results combine gridded meteorology and assumed conversion profiles. The availability split depends on the reference curve and input year. [Weather provenance](../docs/WEATHER_DATA_AUDIT.md) · [Winter plant trace](../week7/nextstage/outputs/winter_168h_original_equipment_plant_trace.csv) · [Figure 05](Figure_Plan.md#3-pv-and-wind-resources)
+
+## 3. Battery and diesel operation
+
+In the same Original 168 h case, battery output over the first hour is 45.25 kWh at the AC boundary and supplements 43.75 kWh from wind. The DG first generates at index 3. Across 168 h it generates 6,704.71 kWh and consumes its starting 2,000 L inventory. Of its generated energy, 6,648.79 kWh serves load, 55.92 kWh charges the BESS and no energy is dumped in this trace. BESS supplies 205.72 kWh AC cumulatively and ends at 10% SOC. The ideal UPS energy used over the window is 7.50 kWh. The component balances reconcile. The sub-hour source continuity and the actual AC reference remain unverified. [Winter plant trace](../week7/nextstage/outputs/winter_168h_original_equipment_plant_trace.csv) · [Independent reconciliation](../research_evidence/islanded_architecture_gate/PRESERVATION_AND_TEST_REPORT.md) · [Figure 06](Figure_Plan.md#4-dispatch-and-storage)
+
+## 4. Outage outcomes and fuel limits
+
+In the paired dynamic-EV January case, Original Critical ENS is 0, 0 and 259.58 kWh for 24, 72 and 168 h. Corresponding Original Total ENS is 3.10, 1,073.70 and 6,555.40 kWh. In the independently initialised Stage 3 **static** EV study, the 100/100 kW and 600 kWh option has Critical ENS in 15 of the 52 tested 168 h windows, with worst-window Critical Energy Autonomy about 75.10%. Under Stage 4's hypothetical three-delivery policy for the 100/100/450 candidate, static-EV mean Total ENS falls from about 767 to 288 kWh/window. Tank headroom admits approximately 1,197 of the nominal 1,500 L on average. The simulated outcomes show sensitivity to outage start and fuel logistics. The start count describes this sample, with no probability model for actual events or deliveries. [January comparisons](../research_evidence/hdh_heating_sensitivity/RESILIENCE_COMPARISON.csv) · [Stage 3 summary](../week7/stage3/outputs/weekly_52_starts_summary.csv) · [Stage 4 policy results](../week7/stage4/outputs/stage4_52start_contingency_summary.csv)
+
+## 5. Charging service and EV readiness
+
+The normal-year Central planned schedule has 1,513 completed departures, 43,958.695652 kWh of AC charging before hourly rounding and 40,442 kWh DC of charging and traction energy. After a 168 h Original January outage with dynamic feedback, 28 of 29 mission opportunities are completed, with 512.5 kWh AC served charging and 3,472.18 kWh of cumulative unmet charging requests. Request ENS can count deferred demand again. In the separately configured Stage 4 dynamic W01 and W09 base cases, charging ENS is about 614.04 and 3,029.00 kWh, with zero and one missed departure respectively out of 29 opportunities. These comparisons show why cumulative request deficits and readiness require separate metrics. [Annual fleet summary](../week7/outputs/central_summary.json) · [Stage 4 dynamic results](../week7/stage4/outputs/stage4_13start_EV_mission_feedback.csv) · [January trace](../week7/nextstage/outputs/winter_168h_original_equipment_EV_trace.csv)
+
+## 6. Cost and numerical resilience
+
+For Central at the hypothetical 250 kW import limit, the 100/100 kW candidates with 300, 450 and 600 kWh of BESS have selected discounted cash present values of £2.313m, £2.396m and £2.492m. All nine Central feeder cases compared meet the same requested service criterion. The associated static EV 52-start mean islanded Total ENS values for the three examples are approximately 846.2, 767.0 and 719.0 kWh per 168 h window. Increasing stationary storage in this subset improves the separately simulated mean shortfall while raising selected costs. The comparison excludes combined normal and outage cash accounting, likelihood-weighted impacts and a full NPC. [Cost replay](../week7/stage7/outputs/stage7_27_service_matched_cash_replay.csv) · [Matched comparison](../week7/stage6/outputs/stage6_central_peacetime_outage_comparison.csv) · [Figure 08](Figure_Plan.md#6-economic-analysis)
+
+## 7. Heating timing sensitivity
+
+At 15.5°C assumed balance temperature, annual demand and heating remain 763,901.095464 and 72,768 kWh, respectively. Peak hourly demand rises from 195.091304 to 201.091304 kW at the same earliest timestamp (2 January at 18:00), a 3.08% increase. January heating rises by 2,016.87 kWh and summer electricity is unchanged. With identical winter plant settings, 168 h Critical ENS increases from 259.58 to 277.52 kWh, Total ENS from 6,555.40 to 7,098.94 kWh (+8.29%), and Critical Energy Autonomy declines from 95.93% to 95.65%. Both consume 2,000 L. At 24 and 72 h neither profile records Critical ENS. These differences quantify sensitivity to a synthetic redistribution of hourly electricity, with no empirical calibration of temperature-dependent annual consumption. [Annual and peak results](../research_evidence/hdh_heating_sensitivity/HDH_SCENARIO_SUMMARY.csv) · [Winter results](../research_evidence/hdh_heating_sensitivity/RESILIENCE_COMPARISON.csv) · [Figures 07 and 09](Figure_Plan.md#5-outage-resilience)
+
+## 8. Native validation boundary
+
+Analytical fixtures pass all 22 comparisons. Scoped MDT component evidence verifies selected aggregate outputs and some event results. DG 24 h and BESS B3 fail the fixed visible hourly-step criteria. B1/B2 end SOC values are derived. PV/Wind P2/W2 event and physical states remain inconclusive while their aggregate and visible clock pass. Integrated DG+BESS D1 remains **NO-GO / NOT RUN**. An equivalent HOMER full-system or economic result is not established. [Native component index](../week8/README.md) · [Integrated decision](../week8/t17_dg_bess_native_v1/D1_GATE_STATUS.json) · [Figure 10](Figure_Plan.md#8-model-validation)
