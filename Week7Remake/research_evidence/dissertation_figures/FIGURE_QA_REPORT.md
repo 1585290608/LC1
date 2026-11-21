@@ -1,6 +1,6 @@
 # Dissertation figure quality and evidence checks
 
-Review date 21 November 2026. The active data baseline is local Git commit `27c48e4` plus the versioned architecture audit. The library contains 12 figure designs. Eleven are original renderings from saved tables and one is a byte-identical SVG copy of the architecture audit drawing.
+Review date 21 November 2026. The active data baseline is local Git commit `27c48e4` plus the versioned architecture audit. The original selection contained 12 figure designs. The Critical 0/1/2 supplement below adds three figures. Eleven are original renderings from saved tables and one is a byte-identical SVG copy of the architecture audit drawing.
 
 ## Inventory scope
 
@@ -50,3 +50,17 @@ python -B -m research_evidence.dissertation_figures.build_figure_library --outpu
 The script reads frozen CSV/JSON and the new architecture SVG. It does not run a simulation. Use the index to compare the SHA-256 for the PNG, PDF and SVG results. Rendering by a different Matplotlib or font build may change file bytes while preserving the numerical input.
 
 [Inventory](FIGURE_INDEX.csv) · [Captions](FIGURE_CAPTIONS.md) · [Figure choices](FIGURE_SELECTION.md) · [Architecture preservation and tests](../islanded_architecture_gate/PRESERVATION_AND_TEST_REPORT.md)
+
+## Critical 0/1/2 figure supplement
+
+Figures 03a, A03 and A04 are the original 3,600 × 2,100 PNGs at 300 dpi supplied in the local LC1 Critical 0/1/2 image package. The ZIP SHA-256 is `c0e055290e0106541b670609ba5c7e9deeaf2c3cca1f34b4961f26ac6b1e6926`. The three SHA-256 values in the figure index match their ZIP entries. The supplied CSV (SHA-256 `c7c2b78b9197aba62afd26279f87a358996b660ee75bfcf82aa3af535a9d73d4`) and package readme are preserved byte for byte. The original library above retains its own reproduction workflow. These three PNGs are raster originals and were verified directly against the CSV by checking the chart geometry against calibrated axis ticks. [Index](FIGURE_INDEX.csv) · [Supporting CSV](02_Load_Modelling/data/LC1_monthly_critical012_breakdown.csv) · [Package readme](02_Load_Modelling/data/README.txt)
+
+| Check | Result |
+| --- | --- |
+| Calendar and totals | **PASS**. The 8,760 saved hourly LST load rows independently reproduce the 12 frozen monthly totals. The supplied CSV matches monthly Central total and EV charging within 0.000364 kWh, below half of the 0.001 kWh reporting precision. The rounded monthly CSV totals sum to 763,901.094 kWh. The authoritative annual total remains 763,901.095464 kWh. |
+| Critical split | **PASS**. Each month exactly matches 600 kWh/day for command and communications, 240 kWh/day for dedicated cooling and refrigeration, and 72 kWh/day for security, each multiplied by the month length. Together they reproduce 912 kWh/day and 332,880 kWh/year of existing Critical demand. |
+| Remaining end uses and shares | **PASS**. Other Auxiliary reconciles within 10⁻¹¹ kWh and the five groups sum to the supplied monthly total within 10⁻¹¹ kWh. Shares match group energy divided by monthly total and sum to 100% at floating-point precision. |
+| PNG geometries | **PASS**. All 120 cumulative bar boundaries and 36 line markers agree with the CSV to within one image pixel against the tick calibration. The maximum discrepancies are 0.73 px for the absolute-energy bars, 0.57 px for the shares and 0.61 px for the lines. |
+| Figure limitations | The line PNG lacks an explicit vertical-axis unit. The caption states kWh per calendar month. The legend overlays part of the Auxiliary area in the bar charts. The dataset remains available for exact values. |
+
+Critical 0/1/2 are presentation groups of the original Critical tier. The study still uses the original Critical, Auxiliary and EV dispatch tiers. [Frozen monthly source](../temperature_driven_load_calibration/monthly_baseline.csv) · [Saved hourly Central loads](../../week7/outputs/central_load_8760.csv)

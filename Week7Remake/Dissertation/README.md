@@ -10,7 +10,7 @@ Cardiff University EN3400 · Hybrid Microgrids for Defence Applications · Writi
 | [Methodology](Methodology.md) | Fifteen source-linked methods sections with equations, worked examples, units, verification and evidence boundaries. |
 | [Results](Results.md) | Draft numerical findings from the saved simulations and component benchmarks. |
 | [Supervisor review](Supervisor_Review.md) | Review agenda, key findings, four existing figures and five open decisions. |
-| [Figure plan](Figure_Plan.md) | Ten main-text and two appendix figures with English captions and source links. |
+| [Figure plan](Figure_Plan.md) | Eleven main-text and four appendix figures with English captions and source links. |
 | [Evidence register](Evidence_Register.csv) | Parameter and result locators, source commit and SHA-256, evidence class and status. |
 | [Writing roadmap](Writing_Roadmap.md) | Chapter order, available evidence and dependencies for drafting. |
 
@@ -39,7 +39,7 @@ Register paths are relative to the Git repository root unless prefixed `Research
 - PASS. Recalculated the 26,280 frozen load rows, their monthly and annual reconciliation, and the 8,760 timestamp/T2M pairs against the archived NASA data and saved HDH table. Recomputed the paired ENS and Critical EA denominators and the sums of 27 saved discounted cash ledgers. The 0.000188 kWh Central EV difference between the annual scheduler summary and serialised hourly total is explained by reporting precision.
 - PASS. Existing Python 3.12 tests were rerun with `-B` and `PYTHONDONTWRITEBYTECODE=1`: Week7Remake 143/143 and Initial Draft 53/53. The three EV fixtures, all 142 public Baseline hashes, and all 166 full Baseline hashes passed. All 158 historical Initial Draft Git blobs match the original commit. The previously added migration note remains outside the original set.
 - PASS. The Original Package inventory passed 367/367. Stage 7 output manifests passed 16/16 in Git and 16/16 in the archived working package. All 324 saved Stage 8 file hashes across seven manifests passed.
-- PASS. The twelve chosen figure designs map to all 23 existing artwork files. Index digests, source links and the intended dissertation-only Git diff were reviewed.
+- PASS. The original twelve figure designs map to 23 artwork files. The three later Critical 0/1/2 PNGs are covered by the figure QA supplement. Index digests, source links and the intended dissertation-only Git diff were reviewed.
 - NOT RUN. Native and scenario simulations were not newly executed for this documentation task. D1 remains NO-GO / NOT RUN. The archived benchmark outcomes retain their original evidence classes.
 
 The official Cardiff EN3400 submission brief was not found among the inspected Git files. The project supervisor or course material should confirm submission, formatting and assessment requirements. This workspace proposes no deadline, rubric or word limit.

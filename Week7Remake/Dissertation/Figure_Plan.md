@@ -1,6 +1,6 @@
 # Dissertation figure plan
 
-Ten figures are proposed for the main text, followed by two appendix figures. Captions use provisional numbering. PDF/SVG masters and PNG derivatives link to the existing publication library. No artwork was regenerated. [Selection and quality report](../research_evidence/dissertation_figures/FIGURE_QA_REPORT.md)
+Eleven figures are proposed for the main text, followed by four appendix figures. Captions use provisional numbering. The figure library supplies the vector masters and PNG derivatives where available, plus the three original Critical 0/1/2 PNGs. [Selection and quality report](../research_evidence/dissertation_figures/FIGURE_QA_REPORT.md)
 
 ## 1 System architecture
 
@@ -29,6 +29,14 @@ Show when each end use contributes energy throughout the year, using the same to
 **Figure X (proposed 03).** Monthly Central electricity consumption by end use in fixed 2025 LST (MWh per calendar month). Each segment integrates the saved one-hour mean electrical power. The end uses are identical to those in the annual breakdown and the monthly totals sum to 763.901 MWh. Heating and cooling follow the original calendar schedules.
 
 Evidence class **PYTHON_SIMULATION**. Original Central 2025 LST. [PDF](../research_evidence/dissertation_figures/02_Load_Modelling/03_monthly_electricity.pdf) · [PNG](../research_evidence/dissertation_figures/02_Load_Modelling/03_monthly_electricity.png) · [monthly_baseline.csv](../research_evidence/temperature_driven_load_calibration/monthly_baseline.csv)
+
+### 03a Monthly electricity composition by load group
+
+Use the 100% view to show seasonal changes in composition alongside Figure 03.
+
+**Figure X (proposed 03a).** Monthly shares of Central electricity demand in fixed 2025 LST. Each segment is its group's energy divided by the total electricity for that calendar month, including EV charging and other Auxiliary electricity. Critical 0 is command and communications (600 kWh/day), Critical 1 combines dedicated C4ISR cooling and medical refrigeration (240 kWh/day), and Critical 2 is security lighting (72 kWh/day). The three groups are a presentation breakdown of the existing modelled Critical tier. The dispatch priority remains the same.
+
+Evidence class **PYTHON_SIMULATION** (presentation of saved outputs). Original Central 2025 LST. [PNG](../research_evidence/dissertation_figures/02_Load_Modelling/LC1_monthly_critical012_share_percent.png) · [Supporting CSV](../research_evidence/dissertation_figures/02_Load_Modelling/data/LC1_monthly_critical012_breakdown.csv)
 
 ### 04 Low, Central and High demand
 
@@ -115,3 +123,19 @@ Support the assumed 250 kW import context for Figure 08 and show the sensitivity
 **Figure A.X (proposed A02).** Annual requested-service shortfall (MWh) versus assumed import capacity for Stage 6 Central and High demand, using 100 kW PV, 100 kW wind, 450 kWh BESS and a 90 kW PCS over 8,760 hours in 2025 LST. Dynamic EV charging requests may recur. The curves describe this numerical service screen and do not establish an approved grid connection or EENS.
 
 Evidence class **PYTHON_SIMULATION**. Stage 6 Central/High, 2025 LST, 100–250 kW, PV/Wind 100/100 kW, BESS 450 kWh, PCS 90 kW. [PDF](../research_evidence/dissertation_figures/07_Sensitivity_Analysis/A02_grid_import_sensitivity.pdf) · [PNG](../research_evidence/dissertation_figures/07_Sensitivity_Analysis/A02_grid_import_sensitivity.png) · [stage6_grid_limit_sweep_14.csv](../week7/stage6/outputs/stage6_grid_limit_sweep_14.csv)
+
+### A03 Monthly Central electricity by load group
+
+Show the corresponding absolute energy in kWh per calendar month.
+
+**Figure A.X (proposed A03).** Monthly Central electricity in fixed 2025 LST (kWh per calendar month), stacked by the three Critical presentation groups, EV charging and other Auxiliary demand. The bar totals reconcile to the frozen monthly demand within 0.0005 kWh at the supplied CSV precision.
+
+Evidence class **PYTHON_SIMULATION** (presentation of saved outputs). Original Central 2025 LST. [PNG](../research_evidence/dissertation_figures/02_Load_Modelling/LC1_monthly_critical012_stacked_kwh.png) · [Supporting CSV](../research_evidence/dissertation_figures/02_Load_Modelling/data/LC1_monthly_critical012_breakdown.csv)
+
+### A04 Monthly electricity within the Critical tier
+
+Show how different month lengths affect the three Critical presentation groups.
+
+**Figure A.X (proposed A04).** Monthly electricity for Critical 0, 1 and 2 under the frozen Central case in fixed 2025 LST. The vertical axis is electricity in kWh per calendar month. The lines vary with month length because each group has a fixed daily schedule. They describe the existing Critical end uses and carry no separate dispatch priorities.
+
+Evidence class **PYTHON_SIMULATION** (presentation of saved outputs). Original Central 2025 LST. [PNG](../research_evidence/dissertation_figures/02_Load_Modelling/LC1_monthly_critical012_lines.png) · [Supporting CSV](../research_evidence/dissertation_figures/02_Load_Modelling/data/LC1_monthly_critical012_breakdown.csv)
