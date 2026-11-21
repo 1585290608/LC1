@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title description">
+  <title id="title">LC1 conceptual islanded electrical architecture</title>
+  <desc id="description">Functional model of the hypothetical 2025 Central winter cases. Solid arrows represent numerical energy accounting. Dashed arrows identify conceptual electrical boundaries or unverified interfaces. No island AC voltage and frequency reference has been identified.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#516270"/>
+    </marker>
+    <style>
+      text {font-family: 'DejaVu Sans', Arial, sans-serif; fill: #18303e}
+      .title {font-size: 32px; font-weight: 700}
+      .subtitle {font-size: 17px; fill: #526674}
+      .name {font-size: 19px; font-weight: 700}
+      .note {font-size: 15px; fill: #465d6b}
+      .lead {font-size: 16px; font-weight: 700}
+      .flow {fill: none; stroke: #516270; stroke-width: 2.5; marker-end: url(#arrow)}
+      .dash {stroke-dasharray: 8 6}
+      .panel {stroke-width: 1.7; rx: 11}
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#ffffff"/>
+  <text x="55" y="58" class="title">LC1 conceptual islanded electrical architecture</text>
+  <text x="55" y="90" class="subtitle">Central winter case · hypothetical 120-person camp · 2025 source LST</text>
+
+  <rect x="445" y="116" width="310" height="57" class="panel" fill="#f6f8fa" stroke="#8b9aa5" stroke-dasharray="7 5"/>
+  <text x="600" y="140" class="name" text-anchor="middle">Utility / PCC boundary</text>
+  <text x="600" y="160" class="note" text-anchor="middle">Zero modelled grid service while islanded</text>
+  <path d="M600 174 V225" class="flow dash"/>
+
+  <rect x="55" y="195" width="275" height="58" class="panel" fill="#fff7e4" stroke="#c98b1c"/>
+  <text x="75" y="219" class="name">PV · 50 kW</text>
+  <text x="75" y="241" class="note">AC profile; interface assumed</text>
+  <path d="M330 224 H400 V245 H438" class="flow"/>
+
+  <rect x="55" y="275" width="275" height="58" class="panel" fill="#eaf6f3" stroke="#217e71"/>
+  <text x="75" y="299" class="name">Wind · 50 kW</text>
+  <text x="75" y="321" class="note">AC profile; interface assumed</text>
+  <path d="M330 304 H438" class="flow"/>
+
+  <rect x="55" y="355" width="275" height="58" class="panel" fill="#fbeee9" stroke="#ad543c"/>
+  <text x="75" y="379" class="name">Diesel generator · 100 kW</text>
+  <text x="75" y="401" class="note">AC dispatch with fuel and start limits</text>
+  <path d="M330 384 H404 V359 H438" class="flow"/>
+
+  <rect x="55" y="435" width="275" height="58" class="panel" fill="#edf3fb" stroke="#4167a0"/>
+  <text x="75" y="459" class="name">BESS 300 kWh DC / PCS</text>
+  <text x="75" y="481" class="note">90 kW AC; grid-forming unverified</text>
+  <path d="M335 464 H420 V384 H438" class="flow" marker-start="url(#arrow)"/>
+
+  <rect x="440" y="229" width="320" height="172" class="panel" fill="#f0f5f8" stroke="#648599"/>
+  <text x="600" y="270" class="name" text-anchor="middle">Islanded AC energy balance</text>
+  <text x="600" y="299" class="note" text-anchor="middle">Shared numerical bus (S3-v2)</text>
+  <text x="600" y="323" class="note" text-anchor="middle">Voltage / frequency reference assumed</text>
+  <text x="600" y="352" class="lead" text-anchor="middle">Physical reference source unverified</text>
+
+  <path d="M760 252 H861" class="flow"/>
+  <rect x="863" y="222" width="274" height="60" class="panel" fill="#f1edf7" stroke="#424477"/>
+  <text x="884" y="247" class="name">Critical tier</text>
+  <text x="884" y="269" class="note">C4ISR, medical and security</text>
+
+  <path d="M760 320 H861" class="flow"/>
+  <rect x="863" y="290" width="274" height="60" class="panel" fill="#edf4eb" stroke="#66845b"/>
+  <text x="884" y="315" class="name">Auxiliary tier</text>
+  <text x="884" y="337" class="note">Camp infrastructure end uses</text>
+
+  <path d="M760 387 H861" class="flow"/>
+  <rect x="863" y="357" width="274" height="60" class="panel" fill="#f0f3f5" stroke="#677686"/>
+  <text x="884" y="382" class="name">EV charging tier</text>
+  <text x="884" y="404" class="note">Unidirectional demand</text>
+
+  <rect x="442" y="456" width="317" height="60" class="panel" fill="#f6f3fa" stroke="#424477"/>
+  <text x="600" y="481" class="name" text-anchor="middle">Ideal UPS · 30 kW / 7.5 kWh</text>
+  <text x="600" y="503" class="note" text-anchor="middle">Serves any remaining critical energy gap</text>
+  <path d="M759 485 H1162 V252 H1140" class="flow"/>
+  <text x="850" y="510" class="note">Physical transfer path unverified</text>
+
+  <path d="M56 564 H107" class="flow"/>
+  <text x="121" y="570" class="note">Implemented energy accounting</text>
+  <path d="M475 564 H528" class="flow dash"/>
+  <text x="544" y="570" class="note">Conceptual boundary; switching unverified</text>
+  <text x="55" y="615" class="subtitle">Functional energy-flow diagram. Physical AC interfaces, switchgear and protection remain unspecified.</text>
+</svg>
