@@ -16,6 +16,8 @@ Cardiff University EN3400 · Hybrid Microgrids for Defence Applications · Writi
 
 Use the fixed 2025 source local solar time (LST) for chronological comparisons. Retain evidence labels when reusing tables and figures. Use **Critical** for the model's whole `c4isr` tier, including medical and security. Keep historical static EV runs distinct from later dynamic charging and mission feedback. Preserve the original MDT records and the dissertation figure masters in their existing locations. [Figure QA](../research_evidence/dissertation_figures/FIGURE_QA_REPORT.md)
 
+The Sennybridge No 2 1991–2020 climate reference is available for the study-area chapter. The 2025 NASA POWER weather year remains the dissertation model input. [Climate reference and verification](../research_evidence/README.md#sennybridge-climate-reference)
+
 ## Version and provenance
 
 The writing branch was cut from clean local `research/islanded-architecture-and-dissertation-figures` at `3a585167f49f226d88bac82e529c5ccdcc98f1b3`. All five commits below are ancestors of that point. Local `main` and the existing `origin/main` reference were both `fca1878d009a202f35852fa75853cbc6de7fe463` at inspection, with six local research commits beyond this base. No push, rebase or merge was required. The Git worktree inventory contained one active worktree.
